@@ -1,0 +1,328 @@
+{
+ "zone": "Europe/Amsterdam",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "apple.hours": {
+    "ms": 670158356,
+    "plays": 3029,
+    "months": [
+     44112347,
+     43388751,
+     72972289,
+     53590226,
+     44017658,
+     57877536,
+     69827908,
+     58596607,
+     72337331,
+     48381116,
+     52699893,
+     52356694
+    ]
+   },
+   "apple.top-artists": {
+    "top": [
+     {
+      "name": "The Wild Radios",
+      "ms": 184098065
+     },
+     {
+      "name": "The Gentle Hills",
+      "ms": 85267262
+     },
+     {
+      "name": "Amber Owls",
+      "ms": 57950125
+     },
+     {
+      "name": "The Velvet Meadow",
+      "ms": 41635396
+     },
+     {
+      "name": "Golden Echoes",
+      "ms": 31293612
+     }
+    ],
+    "ms": 670158356
+   },
+   "apple.top-tracks": {
+    "top": [
+     {
+      "title": "Wild Pilots (Live)",
+      "artist": "The Wild Radios",
+      "plays": 99
+     },
+     {
+      "title": "Bright Radios",
+      "artist": "The Wild Radios",
+      "plays": 95
+     },
+     {
+      "title": "Amber Rivers (Live)",
+      "artist": "The Wild Radios",
+      "plays": 89
+     },
+     {
+      "title": "Winter Hills",
+      "artist": "The Gentle Hills",
+      "plays": 51
+     },
+     {
+      "title": "Winter Hills",
+      "artist": "The Wild Radios",
+      "plays": 50
+     }
+    ]
+   },
+   "apple.top-album": {
+    "name": "Quiet Pilots",
+    "artist": "The Wild Radios",
+    "ms": 65744158
+   },
+   "apple.peak-day": {
+    "day": "2025-09-20",
+    "ms": 13615664
+   },
+   "apple.clock": {
+    "bins": [
+     144,
+     83,
+     104,
+     62,
+     24,
+     11,
+     39,
+     81,
+     155,
+     185,
+     108,
+     80,
+     115,
+     179,
+     156,
+     113,
+     117,
+     193,
+     180,
+     198,
+     170,
+     199,
+     210,
+     123
+    ],
+    "peak": 22
+   },
+   "apple.night": {
+    "night": 417,
+    "plays": 3029,
+    "share": 0.13766919775503467
+   },
+   "apple.session": {
+    "start": 1758362400000,
+    "end": 1758376088000,
+    "count": 70,
+    "ms": 13615664
+   },
+   "apple.discovery": {
+    "seen": 36,
+    "fresh": 8,
+    "share": 0.2222222222222222
+   },
+   "apple.loyalty": {
+    "name": "The Wild Radios",
+    "ms": 184098065,
+    "share": 0.2747083034207515
+   },
+   "apple.skips": {
+    "skipped": 671,
+    "started": 3472,
+    "share": 0.19326036866359447
+   },
+   "apple.repeat": {
+    "title": "Northern Orchard",
+    "artist": "The Velvet Meadow",
+    "day": "2025-06-14",
+    "plays": 15
+   },
+   "apple.first-last": {
+    "first": {
+     "title": "Paper Sailors (Live)",
+     "artist": "The Gentle Hills",
+     "t": 1735701084000
+    },
+    "last": {
+     "title": "Little Radios",
+     "artist": "Amber Owls",
+     "t": 1767186451000
+    }
+   },
+   "apple.change": {
+    "ms": 670158356,
+    "prevMs": 625810657,
+    "change": 0.07086440364022116
+   }
+  },
+  "2026": {
+   "apple.hours": {
+    "ms": 539497212,
+    "plays": 2460,
+    "months": [
+     64749044,
+     52290669,
+     38752797,
+     55907124,
+     70384959,
+     60415106,
+     45752749,
+     56506011,
+     53377527,
+     41361226,
+     0,
+     0
+    ]
+   },
+   "apple.top-artists": {
+    "top": [
+     {
+      "name": "The Wild Radios",
+      "ms": 144819566
+     },
+     {
+      "name": "The Gentle Hills",
+      "ms": 67672019
+     },
+     {
+      "name": "Amber Owls",
+      "ms": 42222527
+     },
+     {
+      "name": "The Velvet Meadow",
+      "ms": 30160703
+     },
+     {
+      "name": "Golden Echoes",
+      "ms": 23924014
+     }
+    ],
+    "ms": 539497212
+   },
+   "apple.top-tracks": {
+    "top": [
+     {
+      "title": "Wild Pilots (Live)",
+      "artist": "The Wild Radios",
+      "plays": 71
+     },
+     {
+      "title": "Bright Radios",
+      "artist": "The Wild Radios",
+      "plays": 66
+     },
+     {
+      "title": "Amber Rivers (Live)",
+      "artist": "The Wild Radios",
+      "plays": 63
+     },
+     {
+      "title": "Winter Hills",
+      "artist": "The Gentle Hills",
+      "plays": 51
+     },
+     {
+      "title": "Winter Hills",
+      "artist": "The Wild Radios",
+      "plays": 48
+     }
+    ]
+   },
+   "apple.top-album": {
+    "name": "Quiet Pilots",
+    "artist": "The Wild Radios",
+    "ms": 50757798
+   },
+   "apple.peak-day": {
+    "day": "2026-08-21",
+    "ms": 6681383
+   },
+   "apple.clock": {
+    "bins": [
+     130,
+     58,
+     84,
+     19,
+     5,
+     0,
+     58,
+     156,
+     106,
+     91,
+     83,
+     74,
+     65,
+     85,
+     79,
+     80,
+     139,
+     191,
+     153,
+     140,
+     106,
+     194,
+     245,
+     119
+    ],
+    "peak": 22
+   },
+   "apple.night": {
+    "night": 296,
+    "plays": 2460,
+    "share": 0.12032520325203253
+   },
+   "apple.session": {
+    "start": 1781385884000,
+    "end": 1781391576000,
+    "count": 17,
+    "ms": 3800419
+   },
+   "apple.discovery": {
+    "seen": 40,
+    "fresh": 4,
+    "share": 0.1
+   },
+   "apple.loyalty": {
+    "name": "The Wild Radios",
+    "ms": 144819566,
+    "share": 0.26843431769208104
+   },
+   "apple.skips": {
+    "skipped": 539,
+    "started": 2782,
+    "share": 0.19374550682961897
+   },
+   "apple.repeat": {
+    "title": "Wild Pilots (Live)",
+    "artist": "The Wild Radios",
+    "day": "2026-09-05",
+    "plays": 4
+   },
+   "apple.first-last": {
+    "first": {
+     "title": "Secret Echoes",
+     "artist": "The Lazy Machines",
+     "t": 1767291211000
+    },
+    "last": {
+     "title": "Midnight Rivers",
+     "artist": "The Wild Lanterns",
+     "t": 1792385537000
+    }
+   },
+   "apple.change": {
+    "ms": 539497212,
+    "prevMs": 559893561,
+    "change": -0.036428975828139594
+   }
+  }
+ }
+}

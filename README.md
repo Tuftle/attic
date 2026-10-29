@@ -36,6 +36,13 @@ drop in the files you can already download from the services you use. attic reco
 | chatgpt | `conversations.json` from the data export | conversations, words both ways, busiest day, longest conversation, code, your most used words (only when you ask), manners, the model mix |
 | claude | `conversations.json` from the data export | the same as chatgpt, without models |
 | your browser | `places.sqlite` (firefox, wren) or `History` (chrome, edge, brave) | an estimate of time online, top sites, busiest weekday, new sites, the longest rabbit hole, late nights |
+| discord | `package.zip` from data and privacy | messages, busiest day and hour, servers against direct messages, days in a row, words, top servers and channels. never who you messaged |
+| apple music | `Apple Music Play Activity.csv` from privacy.apple.com | the same deck as spotify, without artists when apple leaves them out |
+| letterboxd | `diary.csv` from the data export | films, rewatches, ratings, your decade, busiest month, film night |
+| goodreads | `goodreads_library_export.csv` | books, pages, the longest and oldest, your author, ratings |
+| strava | `activities.csv` from the account archive | activities, distance by type, time moving, the longest, weeks in a row, climbing. never routes |
+| steam | the saved licences page | games added and how they arrived. steam keeps no playtime by year |
+| amazon | `Retail.OrderHistory.1.csv` from request your data | orders, items, spent per currency, the biggest order, bought again. never addresses or payments |
 
 two or more sources make the last card richer: "your year in one page" picks the three or four numbers that stood out most.
 
@@ -98,7 +105,8 @@ attic/
       ui/                  drop, found, progress, deck, proof, share
       core/                files, zip, jsonstream, csv, sqlite, timezone, store,
                            analysers, templates, cards, final, redact, doctor
-      sources/             spotify, netflix, youtube, chatgpt, claude, browser
+      sources/             spotify, apple, netflix, youtube, chatgpt, claude, discord,
+                           browser, letterboxd, goodreads, strava, steam, amazon
       render/              charts as svg or canvas, cards as images
       data/                guides.json (cc0), stopwords
   scripts/                 house rules, privacy scan, single file build, fixtures
@@ -110,6 +118,6 @@ attic/
 
 [mpl 2.0](LICENSE). the guides data, `site/src/data/guides.json`, is [cc0](site/src/data/guides.LICENSE.txt). fflate and sql.js keep their mit licences, listed in [site/vendor/VERSIONS.md](site/vendor/VERSIONS.md).
 
-attic is not affiliated with spotify, netflix, youtube, google, openai, anthropic or any browser maker. their names appear only to say which file is which.
+attic is not affiliated with spotify, apple, netflix, youtube, google, openai, anthropic, discord, letterboxd, goodreads, strava, valve, amazon or any browser maker. their names appear only to say which file is which.
 
 <p align="center"><sub>made by tuftle. part of the tuftle family, with <a href="https://github.com/Tuftle/wren">wren</a>, <a href="https://github.com/Tuftle/nook">nook</a> and <a href="https://github.com/Tuftle/burrow">burrow</a>.</sub></p>

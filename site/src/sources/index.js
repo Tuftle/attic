@@ -14,9 +14,13 @@ import browser from './browser.js';
 import letterboxd from './letterboxd.js';
 import goodreads from './goodreads.js';
 import discord from './discord.js';
+import strava from './strava.js';
+import apple from './apple.js';
+import steam from './steam.js';
+import amazon from './amazon.js';
 
 /** every source attic knows, in the order their cards appear */
-export const SOURCES = [spotify, netflix, youtube, chatgpt, claude, browser, letterboxd, goodreads, discord];
+export const SOURCES = [spotify, netflix, youtube, chatgpt, claude, browser, letterboxd, goodreads, discord, strava, apple, steam, amazon];
 
 export const CLAIM_AT = 0.5;
 // inside a big zip, files that no source names are only sniffed when there are few

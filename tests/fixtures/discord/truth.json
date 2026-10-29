@@ -1,0 +1,320 @@
+{
+ "zone": "Europe/Berlin",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "discord.messages": {
+    "messages": 1778,
+    "months": [
+     181,
+     146,
+     168,
+     137,
+     135,
+     116,
+     151,
+     167,
+     167,
+     184,
+     123,
+     103
+    ]
+   },
+   "discord.busiest": {
+    "day": "2025-09-26",
+    "messages": 21,
+    "bins": [
+     58,
+     24,
+     23,
+     11,
+     9,
+     2,
+     8,
+     21,
+     32,
+     54,
+     45,
+     46,
+     79,
+     78,
+     109,
+     75,
+     129,
+     94,
+     151,
+     155,
+     170,
+     152,
+     157,
+     96
+    ],
+    "peak": 20
+   },
+   "discord.places": {
+    "direct": 202,
+    "server": 1576,
+    "share": 0.11361079865016872
+   },
+   "discord.streak": {
+    "days": 11,
+    "start": "2025-10-08",
+    "end": "2025-10-18"
+   },
+   "discord.words": {
+    "words": 12952
+   },
+   "discord.night": {
+    "night": 125,
+    "messages": 1778,
+    "share": 0.0703037120359955
+   },
+   "discord.top-servers": {
+    "top": [
+     {
+      "name": "The Gentle Wolves",
+      "messages": 871
+     },
+     {
+      "name": "Distant Owls",
+      "messages": 266
+     },
+     {
+      "name": "Winter Hills",
+      "messages": 149
+     },
+     {
+      "name": "Wild Orchard",
+      "messages": 144
+     },
+     {
+      "name": "Summer Lights",
+      "messages": 121
+     }
+    ]
+   },
+   "discord.top-channels": {
+    "top": [
+     {
+      "name": "#general in The Gentle Wolves",
+      "messages": 460
+     },
+     {
+      "name": "#off-topic in The Gentle Wolves",
+      "messages": 261
+     },
+     {
+      "name": "#plans in The Gentle Wolves",
+      "messages": 150
+     },
+     {
+      "name": "#general in Wild Orchard",
+      "messages": 144
+     },
+     {
+      "name": "#plans in Distant Owls",
+      "messages": 113
+     }
+    ]
+   },
+   "discord.top-words": {
+    "top": [
+     {
+      "word": "lol",
+      "n": 746
+     },
+     {
+      "word": "raid",
+      "n": 746
+     },
+     {
+      "word": "coffee",
+      "n": 744
+     },
+     {
+      "word": "meeting",
+      "n": 734
+     },
+     {
+      "word": "later",
+      "n": 728
+     },
+     {
+      "word": "garden",
+      "n": 722
+     },
+     {
+      "word": "tonight",
+      "n": 721
+     },
+     {
+      "word": "stream",
+      "n": 714
+     }
+    ]
+   },
+   "discord.change": {
+    "messages": 1778,
+    "prev": 1852,
+    "change": -0.03995680345572354
+   }
+  },
+  "2026": {
+   "discord.messages": {
+    "messages": 1375,
+    "months": [
+     128,
+     100,
+     189,
+     145,
+     90,
+     182,
+     187,
+     177,
+     89,
+     88,
+     0,
+     0
+    ]
+   },
+   "discord.busiest": {
+    "day": "2026-06-19",
+    "messages": 19,
+    "bins": [
+     45,
+     60,
+     26,
+     4,
+     4,
+     7,
+     0,
+     8,
+     28,
+     42,
+     29,
+     31,
+     56,
+     77,
+     39,
+     54,
+     88,
+     80,
+     121,
+     141,
+     128,
+     114,
+     127,
+     66
+    ],
+    "peak": 19
+   },
+   "discord.places": {
+    "direct": 181,
+    "server": 1194,
+    "share": 0.13163636363636363
+   },
+   "discord.streak": {
+    "days": 8,
+    "start": "2026-01-04",
+    "end": "2026-01-11"
+   },
+   "discord.words": {
+    "words": 10287
+   },
+   "discord.night": {
+    "night": 139,
+    "messages": 1375,
+    "share": 0.10109090909090909
+   },
+   "discord.top-servers": {
+    "top": [
+     {
+      "name": "The Gentle Wolves",
+      "messages": 660
+     },
+     {
+      "name": "Distant Owls",
+      "messages": 240
+     },
+     {
+      "name": "Wild Orchard",
+      "messages": 95
+     },
+     {
+      "name": "Summer Lights",
+      "messages": 92
+     },
+     {
+      "name": "The Silver Radios",
+      "messages": 55
+     }
+    ]
+   },
+   "discord.top-channels": {
+    "top": [
+     {
+      "name": "#general in The Gentle Wolves",
+      "messages": 354
+     },
+     {
+      "name": "#off-topic in The Gentle Wolves",
+      "messages": 229
+     },
+     {
+      "name": "#general in Wild Orchard",
+      "messages": 95
+     },
+     {
+      "name": "#off-topic in Distant Owls",
+      "messages": 90
+     },
+     {
+      "name": "#general in Distant Owls",
+      "messages": 90
+     }
+    ]
+   },
+   "discord.top-words": {
+    "top": [
+     {
+      "word": "lol",
+      "n": 622
+     },
+     {
+      "word": "meeting",
+      "n": 600
+     },
+     {
+      "word": "boss",
+      "n": 591
+     },
+     {
+      "word": "patch",
+      "n": 585
+     },
+     {
+      "word": "build",
+      "n": 582
+     },
+     {
+      "word": "tonight",
+      "n": 572
+     },
+     {
+      "word": "map",
+      "n": 563
+     },
+     {
+      "word": "coffee",
+      "n": 562
+     }
+    ]
+   },
+   "discord.change": {
+    "messages": 1375,
+    "prev": 1534,
+    "change": -0.10365058670143416
+   }
+  }
+ }
+}

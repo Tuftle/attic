@@ -14,6 +14,9 @@ const SESSION_GAP = 20 * 60000;
 export function musicCards(r, ctx, src) {
   const id = s => `${src.id}.${s}`;
   const store = r.store;
+  // a history with dates only (apple's daily tracks) has no hours to tell
+  const timed = !(r.extras && r.extras.dateOnly);
+  if (!timed) ctx = { ...ctx, timeZone: 'UTC' };
   const S = scope(store, ctx);
   const { z, when } = S;
   const music = store.ofKind('listen', S.lo, S.hi);
@@ -102,7 +105,7 @@ export function musicCards(r, ctx, src) {
   }));
 
   // the hour
-  if (plays.length) {
+  if (timed && plays.length) {
     const bins = hourHistogram(t, plays, z);
     const h = peak(bins);
     out.push(card({
@@ -129,7 +132,7 @@ export function musicCards(r, ctx, src) {
   // the longest session
   const ses = sessions(t, dur, music, SESSION_GAP);
   const long = longest(ses, s => s.end - s.start);
-  if (long && long.count > 1) {
+  if (timed && long && long.count > 1) {
     out.push(card({
       ...base, id: id('session'), title: 'longest session', big: duration(long.end - long.start),
       caption: words('on {day}, {n} with no break longer than 20 minutes.', { day: dayName(z.dayKey(long.start)), n: count(long.count, 'song') }),
@@ -200,8 +203,12 @@ export function musicCards(r, ctx, src) {
     const who = i => ({ title: str(store.title[i]), artist: str(store.creator[i]), t: t[i] });
     out.push(card({
       ...base, id: id('first-last'), title: 'first and last', big: name(str(store.title[f])),
-      caption: words('your first song {when}, on {day}, by {artist}.', { when, day: dayName(z.dayKey(t[f])), artist: name(str(store.creator[f])) }),
-      detail: words(S.unfinished ? 'the latest so far is {track} by {artist}, on {day}.' : 'the last was {track} by {artist}, on {day}.', { track: name(str(store.title[l])), artist: name(str(store.creator[l])), day: dayName(z.dayKey(t[l])) }),
+      caption: store.creator[f] >= 0
+        ? words('your first song {when}, on {day}, by {artist}.', { when, day: dayName(z.dayKey(t[f])), artist: name(str(store.creator[f])) })
+        : words('your first song {when}, on {day}.', { when, day: dayName(z.dayKey(t[f])) }),
+      detail: store.creator[l] >= 0
+        ? words(S.unfinished ? 'the latest so far is {track} by {artist}, on {day}.' : 'the last was {track} by {artist}, on {day}.', { track: name(str(store.title[l])), artist: name(str(store.creator[l])), day: dayName(z.dayKey(t[l])) })
+        : words(S.unfinished ? 'the latest so far is {track}, on {day}.' : 'the last was {track}, on {day}.', { track: name(str(store.title[l])), day: dayName(z.dayKey(t[l])) }),
       values: { first: who(f), last: who(l) },
     }));
   }

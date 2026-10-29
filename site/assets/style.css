@@ -105,7 +105,7 @@ code {
 .guide li { margin: .3em 0; }
 .guide dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0 0 1em; }
 .guide dt { font-weight: 600; }
-.guide dd { margin: 0; }
+.guide dd { margin: 0; overflow-wrap: anywhere; }
 .guide .tips { padding-left: 1.1em; }
 
 .foot { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 16px; font-size: 15px; }

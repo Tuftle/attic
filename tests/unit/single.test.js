@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import vm from 'node:vm';
+import { readFileSync } from 'node:fs';
 import { build, transform } from '../../scripts/build-single.mjs';
 
 const { html, policy } = build();
@@ -31,7 +32,8 @@ test('both bundles are valid javascript and load nothing', () => {
   const markup = html.replace(/<script\b[\s\S]*?<\/script>/g, '');
   const links = [...markup.matchAll(/\s(src|href)="([^"]*)"/g)].map(m => m[2]);
   assert.ok(links.length > 10);
-  for (const l of links) assert.match(l, /^(data:|#|\.\/$|https:\/\/(www\.spotify\.com|www\.netflix\.com|takeout\.google\.com|chatgpt\.com|claude\.ai)\/)/, `the page links only to the services and to itself: ${l}`);
+  const guides = JSON.parse(readFileSync(new URL('../../site/src/data/guides.json', import.meta.url), 'utf8')).guides.map(g => g.where.url).filter(Boolean);
+  for (const l of links) assert.ok(/^(data:|#|\.\/$)/.test(l) || guides.includes(l), `the page links only to the services' own pages and to itself: ${l}`);
 });
 
 test('the bundler refuses forms it does not know', () => {

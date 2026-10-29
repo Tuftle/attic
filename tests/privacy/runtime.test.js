@@ -18,6 +18,11 @@ import { netflixFixture } from '../gen/netflix.js';
 import { youtubeFixture } from '../gen/youtube.js';
 import { chatgptFixture, claudeFixture } from '../gen/chat.js';
 import { browserFixture } from '../gen/browser.js';
+import { letterboxdFixture, goodreadsFixture } from '../gen/media.js';
+import { discordFixture } from '../gen/discord.js';
+import { stravaFixture } from '../gen/strava.js';
+import { appleFixture } from '../gen/apple.js';
+import { steamFixture, amazonFixture } from '../gen/shop.js';
 
 let browser, server, url, dir;
 const opts = { skip: skipBrowser, timeout: 240000 };
@@ -46,7 +51,9 @@ async function open(page, target) {
 }
 
 test('no request leaves the page after files are dropped', opts, async () => {
-  const fixtures = { 'my_spotify_data.zip': spotifyFixture().zip, 'netflix-report.zip': netflixFixture().zip, 'takeout.zip': youtubeFixture().zip, 'chatgpt.zip': chatgptFixture().zip, 'claude.zip': claudeFixture().zip, 'history.zip': (await browserFixture()).zip };
+  const fixtures = { 'my_spotify_data.zip': spotifyFixture().zip, 'netflix-report.zip': netflixFixture().zip, 'takeout.zip': youtubeFixture().zip, 'chatgpt.zip': chatgptFixture().zip, 'claude.zip': claudeFixture().zip, 'history.zip': (await browserFixture()).zip,
+    'letterboxd.zip': letterboxdFixture().zip, 'goodreads.zip': goodreadsFixture().zip, 'package.zip': discordFixture().zip, 'strava.zip': stravaFixture().zip,
+    'apple.zip': appleFixture().zip, 'steam.zip': steamFixture().zip, 'amazon.zip': amazonFixture().zip };
   const paths = Object.entries(fixtures).map(([name, bytes]) => { const p = join(dir, name); writeFileSync(p, bytes); return p; });
   const ctx = await browser.newContext({ acceptDownloads: true });
   const page = await ctx.newPage();
@@ -61,12 +68,12 @@ test('no request leaves the page after files are dropped', opts, async () => {
   await page.setInputFiles('#file-input', paths);
   await page.waitForSelector('#found:not([hidden])', { timeout: 120000 });
   const rows = await page.$$eval('#found-rows .found-name', els => els.map(e => e.textContent));
-  assert.deepEqual(rows.sort(), ['chatgpt', 'claude', 'netflix', 'spotify', 'your browser', 'youtube'], 'every source was read, browser history through sql.js in the worker');
+  assert.deepEqual(rows.sort(), ['amazon', 'apple music', 'chatgpt', 'claude', 'discord', 'goodreads', 'letterboxd', 'netflix', 'spotify', 'steam', 'strava', 'your browser', 'youtube'], 'every source was read, browser history through sql.js in the worker');
   await page.selectOption('#year', '2025');
   await page.click('#make');
   await page.waitForSelector('#deck:not([hidden]) .card');
   const total = await page.$eval('#deck-count', el => Number(el.textContent.split(' of ')[1]));
-  assert.ok(total > 40, `${total} cards`);
+  assert.ok(total > 90, `${total} cards`);
   for (let i = 0; i < 5; i++) await page.keyboard.press('ArrowRight');
   const [dl] = await Promise.all([page.waitForEvent('download'), page.click('#card-save')]);
   assert.match(dl.suggestedFilename(), /^attic-2025-06-.*\.png$/);

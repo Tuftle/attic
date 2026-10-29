@@ -40,3 +40,35 @@ test('every card is flagged as expected, and hides every name when asked', async
     assert.equal(redact(c, { names: true }), c, 'names on keeps the card as it is');
   }
 });
+
+const MORE = {
+  'letterboxd.films': false, 'letterboxd.rewatches': false, 'letterboxd.ratings': false, 'letterboxd.decade': false,
+  'letterboxd.month': false, 'letterboxd.weekday': false, 'letterboxd.first-last': true, 'letterboxd.change': false,
+  'goodreads.books': false, 'goodreads.pages': false, 'goodreads.longest': true, 'goodreads.authors': true,
+  'goodreads.ratings': false, 'goodreads.oldest': true, 'goodreads.change': false,
+  'discord.messages': false, 'discord.busiest': false, 'discord.places': false, 'discord.streak': false, 'discord.words': false,
+  'discord.night': false, 'discord.top-servers': true, 'discord.top-channels': true, 'discord.top-words': true, 'discord.change': false,
+  'strava.activities': false, 'strava.distance': false, 'strava.longest': false, 'strava.time': false, 'strava.month': false,
+  'strava.weeks': false, 'strava.hour': false, 'strava.elevation': false, 'strava.change': false,
+  'steam.games': false, 'steam.how': false, 'steam.month': false, 'steam.first-last': true, 'steam.change': false,
+  'amazon.orders': false, 'amazon.spent': false, 'amazon.biggest': true, 'amazon.month': false, 'amazon.weekday': false,
+  'amazon.night': false, 'amazon.repeat': true, 'amazon.change': false,
+};
+
+test('the later sources are flagged as expected, apple music like spotify', async () => {
+  const { letterboxdFixture, goodreadsFixture } = await import('../gen/media.js');
+  const { discordFixture } = await import('../gen/discord.js');
+  const { stravaFixture } = await import('../gen/strava.js');
+  const { appleFixture } = await import('../gen/apple.js');
+  const { steamFixture, amazonFixture } = await import('../gen/shop.js');
+  const fx = [letterboxdFixture(), goodreadsFixture(), discordFixture(), stravaFixture(), appleFixture(), steamFixture(), amazonFixture()];
+  const { results } = await readAll(fx.map((f, i) => file(`${i}.zip`, f.zip)));
+  const { cards } = makeYear(results, { year: 2025, timeZone: 'Europe/Amsterdam', now: Date.UTC(2026, 9, 29) });
+  const want = { ...MORE, ...Object.fromEntries(Object.entries(EXPECTED).filter(([k]) => k.startsWith('spotify.')).map(([k, v]) => [k.replace('spotify.', 'apple.'), v])) };
+  for (const c of cards) {
+    assert.ok(c.id in want, `${c.id} is in the table`);
+    assert.equal(c.sensitive, want[c.id], c.id);
+    assert.ok(!leaks(redact(c), c.names), `${c.id} leaks a name`);
+  }
+  assert.ok(cards.length >= 40);
+});

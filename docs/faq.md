@@ -33,5 +33,11 @@ no. events are sorted and exact repeats dropped, so overlapping exports and the 
 **can i keep my year?**
 save the images, copy it as text, or tick "keep my results on this device", which stores only the finished cards in this browser. "forget everything" removes all of it.
 
+**what about discord?**
+the export holds only messages you sent. attic counts them, shows server and channel names only on your screen unless you turn names on, and never says who you sent direct messages to. the analytics files in the export are never opened.
+
+**is my amazon spending private?**
+the totals are shown on your screen and in saved images, since they are numbers, not names. product names are hidden in saved images by default. addresses, payment details and gift messages are never read.
+
 **is attic affiliated with spotify, netflix or the others?**
 no. their names are used only to say which file is which.

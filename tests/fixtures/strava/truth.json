@@ -1,0 +1,188 @@
+{
+ "zone": "Europe/London",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "strava.activities": {
+    "activities": 130,
+    "months": [
+     14,
+     10,
+     14,
+     10,
+     12,
+     12,
+     11,
+     3,
+     14,
+     12,
+     8,
+     10
+    ]
+   },
+   "strava.distance": {
+    "metres": 3155791,
+    "byType": [
+     {
+      "type": "Ride",
+      "metres": 2190362
+     },
+     {
+      "type": "Run",
+      "metres": 662788
+     },
+     {
+      "type": "Walk",
+      "metres": 272958
+     },
+     {
+      "type": "Swim",
+      "metres": 29683
+     }
+    ]
+   },
+   "strava.longest": {
+    "type": "Ride",
+    "metres": 90032
+   },
+   "strava.time": {
+    "ms": 730116000
+   },
+   "strava.month": {
+    "month": 0,
+    "activities": 14
+   },
+   "strava.weeks": {
+    "weeks": 22
+   },
+   "strava.hour": {
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     32,
+     29,
+     0,
+     0,
+     0,
+     0,
+     10,
+     0,
+     0,
+     0,
+     0,
+     14,
+     25,
+     20,
+     0,
+     0,
+     0,
+     0
+    ],
+    "peak": 6
+   },
+   "strava.elevation": {
+    "metres": 24580
+   },
+   "strava.change": {
+    "activities": 130,
+    "prev": 139,
+    "change": -0.06474820143884892
+   }
+  },
+  "2026": {
+   "strava.activities": {
+    "activities": 113,
+    "months": [
+     9,
+     15,
+     18,
+     13,
+     14,
+     8,
+     16,
+     4,
+     8,
+     8,
+     0,
+     0
+    ]
+   },
+   "strava.distance": {
+    "metres": 2070479,
+    "byType": [
+     {
+      "type": "Ride",
+      "metres": 1003104
+     },
+     {
+      "type": "Run",
+      "metres": 657410
+     },
+     {
+      "type": "Walk",
+      "metres": 377008
+     },
+     {
+      "type": "Swim",
+      "metres": 32957
+     }
+    ]
+   },
+   "strava.longest": {
+    "type": "Ride",
+    "metres": 88671
+   },
+   "strava.time": {
+    "ms": 645425000
+   },
+   "strava.month": {
+    "month": 2,
+    "activities": 18
+   },
+   "strava.weeks": {
+    "weeks": 31
+   },
+   "strava.hour": {
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     18,
+     29,
+     0,
+     0,
+     0,
+     0,
+     9,
+     0,
+     0,
+     0,
+     0,
+     15,
+     25,
+     17,
+     0,
+     0,
+     0,
+     0
+    ],
+    "peak": 7
+   },
+   "strava.elevation": {
+    "metres": 18195
+   },
+   "strava.change": {
+    "activities": 113,
+    "prev": 111,
+    "change": 0.018018018018018018
+   }
+  }
+ }
+}
