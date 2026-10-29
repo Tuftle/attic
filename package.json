@@ -17,6 +17,9 @@
     "build-guides": "node scripts/build-guides.mjs",
     "make-fixtures": "node scripts/make-fixtures.mjs",
     "walkthrough": "node tests/visual/walkthrough.mjs",
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "privacy-scan": "node scripts/privacy-scan.mjs",
+    "test:browser": "ATTIC_BROWSER=1 node --test --test-concurrency=1 \"tests/privacy/*.test.js\" \"tests/browser/*.test.js\"",
+    "build-single": "node scripts/build-single.mjs"
   }
 }

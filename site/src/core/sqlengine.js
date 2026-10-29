@@ -23,16 +23,19 @@ export function loadSqlEngine() {
       const before = { module: g.module, exports: g.exports };
       g.module = { exports: {} };
       g.exports = g.module.exports;
-      let init;
+      let ready;
       try {
         await import('../../vendor/sql-wasm.js');
-        init = g.module.exports;
+        const init = g.module.exports;
+        if (typeof init !== 'function') throw new Error('the database reader did not load');
+        // sql.js sets module to undefined as it starts, so the stand-in has
+        // to be there until it has been called
+        ready = init({ wasmBinary: decodeBase64(wasmBase64) });
       } finally {
         if (before.module === undefined) delete g.module; else g.module = before.module;
         if (before.exports === undefined) delete g.exports; else g.exports = before.exports;
       }
-      if (typeof init !== 'function') throw new Error('the database reader did not load');
-      return init({ wasmBinary: decodeBase64(wasmBase64) });
+      return ready;
     })();
     pending.catch(() => { pending = null; });
   }

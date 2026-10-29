@@ -20,12 +20,12 @@ export const CSP = [
 export const META_CSP = CSP.split('; ').filter(d => !d.startsWith('frame-ancestors')).join('; ');
 
 export const PERMISSIONS = [
-  'accelerometer=()', 'ambient-light-sensor=()', 'autoplay=()', 'bluetooth=()',
+  'accelerometer=()', 'autoplay=()',
   'browsing-topics=()', 'camera=()', 'clipboard-read=()', 'clipboard-write=(self)', 'display-capture=()',
-  'document-domain=()', 'encrypted-media=()', 'fullscreen=()', 'gamepad=()', 'geolocation=()',
+  'encrypted-media=()', 'fullscreen=()', 'gamepad=()', 'geolocation=()',
   'gyroscope=()', 'hid=()', 'idle-detection=()', 'local-fonts=()', 'magnetometer=()', 'microphone=()',
   'midi=()', 'payment=()', 'picture-in-picture=()', 'publickey-credentials-get=()', 'screen-wake-lock=()',
-  'serial=()', 'usb=()', 'web-share=()', 'xr-spatial-tracking=()',
+  'serial=()', 'usb=()', 'xr-spatial-tracking=()',
 ].join(', ');
 
 export const HEADERS = {
