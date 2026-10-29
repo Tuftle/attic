@@ -187,7 +187,7 @@ function deck(store, S, ctx, idx, profile, suffix) {
       id: 'netflix.binge', title: 'the big binge', big: count(binge.w, 'episode'),
       caption: words('in one day, on {day}, mostly {show}.', { day: dayName(binge.day), show: name(str(show.key)) }),
       visual: heatmap(z, S.y0, S.y1, perDay, binge.day),
-      detail: 'each square is a day. the darker it is, the more episodes.',
+      detail: 'each square is a day. the stronger the colour, the more episodes.',
       values: { day: isoDay(binge.day), episodes: binge.w, show: str(show.key) },
       stat: { label: 'episodes in one day', display: int(binge.w), value: binge.w, change: null },
     });

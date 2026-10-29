@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: how do i get my files?
+    url: https://github.com/Tuftle/attic/blob/main/site/guides/index.html
+    about: the guides for requesting each export, and how long each one takes.

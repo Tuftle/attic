@@ -224,7 +224,7 @@ function cards(r, ctx) {
   out.push(card({
     ...base, id: 'spotify.peak-day', title: 'your biggest day', big: dayName(big.day),
     caption: words('{hours} of music on one {weekday}.', { hours: hours(big.w), weekday: longDayName(big.day).split(',')[0] }),
-    detail: 'each square is a day. the darker it is, the more you listened.',
+    detail: 'each square is a day. the stronger the colour, the more you listened.',
     visual: heatmap(z, S.y0, S.y1, perDay, big.day),
     values: { day: isoDay(big.day), ms: big.w },
   }));

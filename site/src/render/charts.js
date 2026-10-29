@@ -45,22 +45,23 @@ function bars(v, compact) {
 }
 
 function clockFace(v) {
-  const S = 320, c = S / 2, inner = 34, outer = 132;
+  // room at the sides for the "6 am" and "6 pm" labels
+  const W = 420, H = 340, c = W / 2, cy = H / 2, inner = 34, outer = 132;
   const max = Math.max(1, ...v.bins);
-  const out = [{ t: 'circle', cx: c, cy: c, r: outer, cls: 'track-line' }];
+  const out = [{ t: 'circle', cx: c, cy, r: outer, cls: 'track-line' }];
   for (let h = 0; h < 24; h++) {
     const a0 = ((h / 24) * 2 - 0.5) * Math.PI + 0.02, a1 = (((h + 1) / 24) * 2 - 0.5) * Math.PI - 0.02;
     const r = inner + Math.sqrt(v.bins[h] / max) * (outer - inner);
     if (v.bins[h] === 0) continue;
-    out.push({ t: 'path', d: wedge(c, c, inner, r, a0, a1), cls: h === v.peak ? 'accent' : 'accent-soft' });
+    out.push({ t: 'path', d: wedge(c, cy, inner, r, a0, a1), cls: h === v.peak ? 'accent' : 'accent-soft' });
   }
   for (const [h, label] of [[0, 'midnight'], [6, '6 am'], [12, 'noon'], [18, '6 pm']]) {
     const a = ((h / 24) * 2 - 0.5) * Math.PI;
-    const x = c + Math.cos(a) * (outer + 18), y = c + Math.sin(a) * (outer + 18);
+    const x = c + Math.cos(a) * (outer + 18), y = cy + Math.sin(a) * (outer + 18);
     out.push({ t: 'text', x, y: y + 5, text: label, cls: 'soft', size: 14, anchor: h === 6 ? 'start' : h === 18 ? 'end' : 'middle' });
   }
   const quiet = v.bins.indexOf(Math.min(...v.bins));
-  return { w: S, h: S, items: out, alt: `a 24 hour clock. the most at ${hourName(v.peak)}, the least at ${hourName(quiet)}.` };
+  return { w: W, h: H, items: out, alt: `a 24 hour clock. the most at ${hourName(v.peak)}, the least at ${hourName(quiet)}.` };
 }
 
 function wedge(cx, cy, r0, r1, a0, a1) {

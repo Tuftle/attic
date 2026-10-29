@@ -247,7 +247,7 @@ function cards(r, ctx) {
   out.push(card({
     ...base, id: 'youtube.busiest-day', title: 'your busiest day', big: dayName(big.day),
     caption: words('{n} in one day.', { n: count(big.w, 'video') }),
-    detail: 'each square is a day. the darker it is, the more videos.',
+    detail: 'each square is a day. the stronger the colour, the more videos.',
     visual: heatmap(z, S.y0, S.y1, perDay, big.day),
     values: { day: isoDay(big.day), videos: big.w },
   }));

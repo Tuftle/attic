@@ -43,7 +43,7 @@ export async function walk({ only } = {}) {
         await page.waitForSelector('#deck:not([hidden]) .card', { timeout: 60000 });
         const count = await page.$eval('#deck-count', el => Number(el.textContent.split(' of ')[1]));
         for (let i = 0; i < count; i++) {
-          if (i < 4 || i % 6 === 0 || i === count - 1) await shot(`3-card-${String(i + 1).padStart(2, '0')}`);
+          if (i < 6 || i % 6 === 0 || i === count - 1) await shot(`3-card-${String(i + 1).padStart(2, '0')}`);
           if (i < count - 1) await page.keyboard.press('ArrowRight');
         }
         if (label === 'desktop') {
