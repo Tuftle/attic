@@ -1,11 +1,11 @@
-# yearbook: design
+# attic: design
 
 Your year, from your own data. Drop in the files you can already download from the services you use, and get a calm, shareable story of your year. It runs in the browser. Nothing is uploaded.
 
 Status: design only. Nothing is built yet.
 Last updated: 2026-10-29.
-Owner: tuftle (tuftle@proton.me). Part of the Tuftle family (wren, nook, burrow). A sibling project, `drip`, shares its principles and some code ideas.
-Working name: **yearbook**. Alternatives: keepsake, almanac. The owner decides before anything is built (section 17). Do not use the word "Wrapped" in the name, title or copy: it belongs to Spotify.
+Owner: tuftle (tuftle@proton.me). Part of the Tuftle family (wren, nook, burrow). A sibling project, `pantry`, shares its principles and some code ideas.
+Working name: **attic** (the place you go to look back through your things). Alternatives: hearth, almanac. The owner decides before anything is built (section 17). Do not use the word "Wrapped" in the name, title or copy: it belongs to Spotify.
 
 ---
 
@@ -28,7 +28,7 @@ If this file and the owner disagree, the owner wins. If something here is wrong 
 
 ## 1. What it is
 
-A single web page. The visitor drops in one or several files (zip archives or the files inside them) from services such as Spotify, Netflix, YouTube, ChatGPT and their own browser. yearbook recognises each one, reads it locally, and builds a deck of full-screen cards about the year: big numbers, top lists, small surprises, a few warm sentences. Each card can be saved as an image. A visitor can share only what they choose, and can hide names.
+A single web page. The visitor drops in one or several files (zip archives or the files inside them) from services such as Spotify, Netflix, YouTube, ChatGPT and their own browser. attic recognises each one, reads it locally, and builds a deck of full-screen cards about the year: big numbers, top lists, small surprises, a few warm sentences. Each card can be saved as an image. A visitor can share only what they choose, and can hide names.
 
 It is the shape people love in Spotify's yearly summary, applied to data the visitor already owns and made private by construction.
 
@@ -65,7 +65,7 @@ Anti-goals (a failure even if it works)
 
 ## 4. The visitor's journey
 
-1. **landing.** Headline: "your year, from your own data." Sub: "drop in the files you can download from spotify, netflix, youtube, chatgpt or your browser. yearbook turns them into a story you can keep. it happens in this page. nothing is uploaded." Big drop zone for files and zips. Under it: "try it with example data" (a built-in fake year) and "how do i get my files?" which leads to the guides (section 8). A line: "works offline. try it with wi-fi off." and "how do i know?" for the proof panel.
+1. **landing.** Headline: "your year, from your own data." Sub: "drop in the files you can download from spotify, netflix, youtube, chatgpt or your browser. attic turns them into a story you can keep. it happens in this page. nothing is uploaded." Big drop zone for files and zips. Under it: "try it with example data" (a built-in fake year) and "how do i get my files?" which leads to the guides (section 8). A line: "works offline. try it with wi-fi off." and "how do i know?" for the proof panel.
 2. **what we found.** Each recognised source appears as a row: "spotify, 4 files, march 2019 to october 2026". Unrecognised files are listed with a kind explanation ("this does not look like an export from a service we know yet"). A year picker (default: the current calendar year, with a note if the year is not finished). A time zone picker (default: the browser's, because many exports are in UTC and "late night" depends on it). A button: "make my year".
 3. **making it.** A calm progress view per source with real counts ("read 412,000 plays"). The page stays responsive because all work happens in a Web Worker.
 4. **the deck.** Full-screen cards, one idea each, large serif numbers. Move with arrow keys, swipe, or the next button. Progress dots. A "pause on this card" feel: no autoplay. Each card has: **save image**, **hide names** (on by default for sensitive cards), **leave this one out**.
@@ -153,7 +153,7 @@ The final card ("your year in one page") picks the best three or four numbers ac
 Static site, vanilla ES modules. All parsing and analysis run in a Web Worker. Core logic has no DOM and runs in Node tests.
 
 ```
-yearbook/
+attic/
   DESIGN.md
   README.md
   package.json                type: module; scripts: test, privacy-scan, make-fixtures, build-single
@@ -239,7 +239,7 @@ Follows the Tuftle look. Reuse these tokens.
 - Each source has a quiet accent made from the same palette (shifts of warmth and a leaf tint), not the service's brand colours. No service logos.
 - Cards are full-screen on a phone and centred 4:5 panels on a desktop. Plenty of space. One big element, one sentence, one small graphic.
 - Motion: a gentle count-up and a soft slide between cards. Nothing autoplays. Respect `prefers-reduced-motion` (no animation, instant changes).
-- Saved images: 1080 by 1350 (4:5) by default, with an option for 1080 by 1920 (story). Footer line: "made with yearbook. it ran in my browser and nothing was uploaded."
+- Saved images: 1080 by 1350 (4:5) by default, with an option for 1080 by 1920 (story). Footer line: "made with attic. it ran in my browser and nothing was uploaded."
 - Accessibility: keyboard navigation through the deck, visible focus, contrast at least 4.5:1, every graphic has a text equivalent, screen readers get the card's sentence, labels on all controls, works at 360 px.
 
 ## 11. Privacy and security design
@@ -279,7 +279,7 @@ For each source, a seeded generator writes an export in the shape described in s
 - **Card tests:** every card function returns the right numbers for the generated data and never returns text that breaks the house rules (a checker for em dashes, emojis, banned words, and "hours watched" on YouTube).
 - **Property tests:** shuffling event order changes nothing; shifting the time zone changes hours-of-day stats by the right amount and nothing else; loading the same file twice changes nothing; splitting one export into two overlapping zips equals the single export.
 - **Format doctor tests:** each source, given a wrong or damaged file, gives a plain, specific message.
-- **Privacy tests:** the same three as `drip` (static scan, runtime zero requests after load while processing a fixture, header equals meta policy). Plus: sensitive cards are blurred in the exported image (compare pixels in a known region).
+- **Privacy tests:** the same three as `pantry` (static scan, runtime zero requests after load while processing a fixture, header equals meta policy). Plus: sensitive cards are blurred in the exported image (compare pixels in a known region).
 - **Visual tests:** render each card for a fixed fixture in headless Chrome and compare with a stored image within a small tolerance, at desktop and phone widths, light and dark.
 - **Accessibility:** axe in the runtime test and a manual keyboard pass of the deck.
 - **Performance:** the 1 000 000 event budget in 8.3.
@@ -291,9 +291,9 @@ The owner runs it on their own exports and reports problems as shapes, not data.
 
 ## 13. Deployment
 
-- A Vercel static project named `yearbook`, serving `site/`. `vercel.json` carries the headers in section 11. No functions, no variables, no secrets.
-- Domain later: the owner plans tuftle.com. Until then a vercel.app address or `tuftle.vercel.app/yearbook`.
-- GitHub repository `Tuftle/yearbook`, public. Licence is the owner's choice (the other Tuftle projects use MPL 2.0). The guides data may be CC0.
+- A Vercel static project named `attic`, serving `site/`. `vercel.json` carries the headers in section 11. No functions, no variables, no secrets.
+- Domain later: the owner plans tuftle.com. Until then a vercel.app address or `tuftle.vercel.app/attic`.
+- GitHub repository `Tuftle/attic`, public. Licence is the owner's choice (the other Tuftle projects use MPL 2.0). The guides data may be CC0.
 - The agent prepares everything and stops. The owner runs `vercel deploy --prod --yes`.
 
 ## 14. Milestones and acceptance
@@ -315,24 +315,24 @@ Each milestone ends with tests passing and a report.
 - The first public piece is the **guides page** (M1), in mid November, because exports take time: "request your data now, so it is ready in december." It gives the launch an audience that already has files.
 - The app is ready by the last week of November. Launch in the first days of December, around when the big services release their own yearly summaries. Check the actual dates for 2026 then; do not assume.
 - **X:** a 15 second screen recording of dropping a zip and the cards appearing, then the final card. One line: "my year, from my own data. it never left my laptop." The visitor posts their own card, with names hidden by default.
-- **Hacker News:** "Show HN: yearbook, your year from your own Spotify, Netflix, YouTube and ChatGPT exports, in your browser". The link goes to the working page and an example year, no sign-up. First comment: how streaming zips and huge JSON are read without loading them, the time zone traps, and how to verify the privacy claim.
+- **Hacker News:** "Show HN: attic, your year from your own Spotify, Netflix, YouTube and ChatGPT exports, in your browser". The link goes to the working page and an example year, no sign-up. First comment: how streaming zips and huge JSON are read without loading them, the time zone traps, and how to verify the privacy claim.
 - Honest odds: nobody can promise a top-10 spot. This has a familiar format, a personal result, a privacy claim anyone can check, and a real season. Execution quality and timing decide.
 
 ## 16. Risks
 
 - **Format drift.** Services change their exports. Mitigations: tolerant parsers, alias lists, the format doctor, shape-only issue reports, and keeping each source a small plugin.
 - **Slow exports.** Mitigation: the early guides page and clear time estimates.
-- **Trademark and legal.** Do not use "Wrapped" or any service's logos or look. Service names appear only as plain nominative text. It is the visitor's own data; say plainly that yearbook is not affiliated with any service.
+- **Trademark and legal.** Do not use "Wrapped" or any service's logos or look. Service names appear only as plain nominative text. It is the visitor's own data; say plainly that attic is not affiliated with any service.
 - **Sensitive content.** Chat titles, browsing and search are private. Defaults hide them in images and the page never uploads anything.
 - **Large inputs.** Full Takeout archives are huge. Streaming and filtered unzip are required, and failure must be graceful ("this file is too large for your browser's memory; here is how to export only the part we need").
 - **Calendar.** The window is short. Ship the guides first.
 
 ## 17. Decisions for the owner before building
 
-1. Final name (yearbook, keepsake, almanac, other) and whether a domain is wanted now.
+1. Final name (attic, hearth, almanac, other) and whether a domain is wanted now.
 2. Which sources to cut or add for version 1 (suggested: Spotify, Netflix, YouTube, ChatGPT and Claude, browser history).
-3. Repo and licence (suggested: public `Tuftle/yearbook`, MPL 2.0).
-4. Whether image footers should say "made with yearbook" (suggested: yes, quietly).
+3. Repo and licence (suggested: public `Tuftle/attic`, MPL 2.0).
+4. Whether image footers should say "made with attic" (suggested: yes, quietly).
 5. Whether the owner can provide the shape (not the data) of one real export per source for verification.
 6. The launch date, once the 2026 season dates are known.
 
@@ -345,7 +345,7 @@ After each milestone, send:
 - what you will do next and what you need from the owner
 - cost note: roughly how much of the budget this milestone used, if known
 
-## 19. Shared with drip
+## 19. Shared with pantry
 
 Both projects are static, local-only and tested the same way. Shared ideas, to copy first and extract later into one small toolkit if it proves worth it: the csv reader, the privacy scan and runtime zero-request test, the proof panel, the single-file build, the house-rule linter, the share-card canvas renderer, the palette. Keep them in separate repositories for now so either can ship alone.
 
