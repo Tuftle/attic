@@ -106,4 +106,13 @@ export function andList(items) {
   return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
 }
 
+const SYMBOLS = { EUR: '\u{20ac}', USD: '$', GBP: '\u{a3}', JPY: '\u{a5}' };
+
+/** "\u{20ac}1,234" or "1,234 sek". currencies are never added together. */
+export function money(amount, currency) {
+  const c = String(currency || '').toUpperCase();
+  const whole = int(amount);
+  return SYMBOLS[c] ? `${SYMBOLS[c]}${whole}` : `${whole}${c ? ` ${c.toLowerCase()}` : ''}`;
+}
+
 export const MONTH_SHORT = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];

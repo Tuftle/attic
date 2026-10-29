@@ -2,6 +2,9 @@
 
 import { MONTH_SHORT } from '../core/templates.js';
 import { dayParts } from '../core/timezone.js';
+import { createCsvParser, mapHeader, fold } from '../core/csv.js';
+import { textChunks } from '../core/files.js';
+import { csvColumnsMessage } from '../core/doctor.js';
 
 /** the first field of an object that is present, by alias */
 export function field(obj, aliases) {
@@ -30,6 +33,17 @@ export function parseUtc(v) {
   if (!/(Z|[+-]\d\d:?\d\d)$/i.test(iso)) iso += 'Z';
   if (/T\d\d:\d\d(Z|$)/.test(iso)) iso = iso.replace(/(T\d\d:\d\d)/, '$1:00');
   return Date.parse(iso);
+}
+
+/**
+ * a date with no time, such as "2025-03-14" or "2025/03/14", as 12:00 utc
+ * that day. sources with dates only make their cards in utc, so no time
+ * zone can move a film or a book to the day before or after.
+ */
+export function dateOnly(v) {
+  const m = String(v || '').trim().match(/^(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})/);
+  if (!m) return NaN;
+  return Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]), 12);
 }
 
 /** "2026-03-03" for a local day number */
@@ -75,4 +89,40 @@ export function progress(onProgress, every = 5000) {
     get count() { return n; },
     done() { onProgress?.({ count: n }); },
   };
+}
+
+/**
+ * read a csv export row by row, finding columns by alias. throws a plain
+ * message when a needed column is missing.
+ * @param {any} file
+ * @param {Record<string, string[]>} columns
+ * @param {string[]} needed
+ * @param {string} service  "a goodreads library" in messages
+ * @param {(get: (key: string) => string) => void} onRow
+ */
+export async function readCsv(file, columns, needed, service, onRow) {
+  let index = null;
+  const parser = createCsvParser({
+    onRow(row) {
+      if (!index) {
+        const h = mapHeader(row, columns);
+        const missing = needed.filter(k => h.index[k] === -1);
+        if (missing.length) {
+          throw Object.assign(new Error(csvColumnsMessage(row.filter(Boolean), needed.map(k => columns[k][0].toLowerCase()), service)), { code: 'columns' });
+        }
+        index = h.index;
+        return;
+      }
+      onRow(k => (index[k] >= 0 ? (row[index[k]] || '').trim() : ''));
+    },
+  });
+  for await (const chunk of textChunks(file)) parser.push(chunk);
+  parser.end();
+}
+
+/** true if the first line of a file has every one of these columns */
+export function headerHas(f, ...names) {
+  const line = ((f.headText || '').replace(/^\u{feff}/u, '').split(/\r?\n/)[0] || '');
+  const cells = line.split(/[,;\t]/).map(s => fold(s.replace(/"/g, '')));
+  return names.every(n => cells.includes(fold(n)));
 }

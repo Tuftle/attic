@@ -11,9 +11,12 @@ import youtube from './youtube.js';
 import chatgpt from './chatgpt.js';
 import claude from './claude.js';
 import browser from './browser.js';
+import letterboxd from './letterboxd.js';
+import goodreads from './goodreads.js';
+import discord from './discord.js';
 
 /** every source attic knows, in the order their cards appear */
-export const SOURCES = [spotify, netflix, youtube, chatgpt, claude, browser];
+export const SOURCES = [spotify, netflix, youtube, chatgpt, claude, browser, letterboxd, goodreads, discord];
 
 export const CLAIM_AT = 0.5;
 // inside a big zip, files that no source names are only sniffed when there are few
@@ -27,6 +30,8 @@ const SNIFF_BUDGET = 400;
  */
 export async function detectAll(files, sources = SOURCES) {
   const notes = [];
+  // files a source says must never be opened, such as discord's analytics
+  files = files.filter(f => !sources.some(s => s.skip && s.skip(f)));
   const nameScore = new Map();
   for (const f of files) {
     let best = 0;
