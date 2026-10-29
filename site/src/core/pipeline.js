@@ -34,7 +34,7 @@ export async function readAll(inputs, opts = {}) {
     }
   }
   const found = buildFound(results, notes, opts.timeZone);
-  return { results, notes, found };
+  return { results, notes, found, files };
 }
 
 /**

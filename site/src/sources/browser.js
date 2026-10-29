@@ -108,7 +108,7 @@ function cards(r, ctx) {
     caption: words(pick(['online {when}, as an estimate: the time between visits less than 5 minutes apart.', 'in your browser {when}. an estimate, adding up the gaps between visits under 5 minutes.'], `b:${ctx.year}:${visits.length}`), { when }),
     detail: words('{n} in all.', { n: count(visits.length, 'visit') }),
     values: { ms: online, visits: visits.length },
-    stat: { label: 'hours online, estimated', display: hours(online), value: hoursValue(online), change: delta },
+    stat: { label: 'online, as an estimate', display: hours(online), value: hoursValue(online), change: delta },
   }));
 
   const sites = topN(totalsBy(store.creator, visits, null, t), 5, str);

@@ -165,7 +165,7 @@ function cards(r, ctx) {
     detail: days >= 2 ? words('that is {days} waking days of music, at sixteen hours a day.', { days: int(days) }) : '',
     visual: monthLine(months.map(v => hoursValue(v)), v => `${v} h`),
     values: { ms, plays: plays.length, months },
-    stat: { label: 'hours of music', display: hours(ms), value: hoursValue(ms), change: delta },
+    stat: { label: 'of music', display: hours(ms), value: hoursValue(ms), change: delta },
   }));
 
   // top artists, by time

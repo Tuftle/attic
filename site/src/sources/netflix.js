@@ -161,7 +161,7 @@ function deck(store, S, ctx, idx, profile, suffix) {
     detail: words('{n} in all.', { n: count(idx.length, 'view') }),
     visual: monthLine(monthHistogram(t, idx, z, dur).map(hoursValue), v => `${v} h`),
     values: { ms, views: idx.length, months: monthHistogram(t, idx, z, dur) },
-    stat: { label: 'hours of netflix', display: hours(ms), value: hoursValue(ms), change: delta },
+    stat: { label: 'of netflix', display: hours(ms), value: hoursValue(ms), change: delta },
   });
 
   // top shows
