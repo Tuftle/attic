@@ -30,6 +30,9 @@ services change their exports. on the "what we found" page, press "copy the shap
 **two exports cover the same months. is anything counted twice?**
 no. events are sorted and exact repeats dropped, so overlapping exports and the same file dropped twice count everything once.
 
+**why do i only see six cards for a service?**
+so a year with many services stays short enough to enjoy. each service shows its best six first, and a "more from" card opens the rest. saving all cards saves the ones you opened.
+
 **can i keep my year?**
 save the images, copy it as text, or tick "keep my results on this device", which stores only the finished cards in this browser. "forget everything" removes all of it.
 

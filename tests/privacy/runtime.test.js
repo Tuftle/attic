@@ -73,7 +73,13 @@ test('no request leaves the page after files are dropped', opts, async () => {
   await page.click('#make');
   await page.waitForSelector('#deck:not([hidden]) .card');
   const total = await page.$eval('#deck-count', el => Number(el.textContent.split(' of ')[1]));
-  assert.ok(total > 90, `${total} cards`);
+  assert.ok(total > 60 && total < 110, `${total} cards, each source at its best few`);
+  // the first source's other cards open in place, from its "more" card
+  for (let i = 0; i < 20 && !(await page.$('.card.is-more')); i++) await page.keyboard.press('ArrowRight');
+  await page.click('.card.is-more button');
+  const opened = await page.$eval('#deck-count', el => Number(el.textContent.split(' of ')[1]));
+  assert.ok(opened > total, `${opened} after opening`);
+  await page.keyboard.press('Home');
   for (let i = 0; i < 5; i++) await page.keyboard.press('ArrowRight');
   const [dl] = await Promise.all([page.waitForEvent('download'), page.click('#card-save')]);
   assert.match(dl.suggestedFilename(), /^attic-2025-06-.*\.png$/);

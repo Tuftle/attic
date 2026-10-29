@@ -6,7 +6,7 @@ import { redact } from '../core/redact.js';
 import { download, fileName } from './deck.js';
 import { FOOTER } from '../render/card.js';
 
-export const KEPT_KEY = 'attic.kept.v1';
+export const KEPT_KEY = 'attic.kept.v2';
 
 /** the year as plain text, names hidden where the visitor left them hidden */
 export function asText(included, year) {
@@ -77,7 +77,7 @@ export function setupKeep(els, { deck, onBack, onForget }) {
   });
   els.device.addEventListener('change', () => {
     const ok = els.device.checked
-      ? writeKept({ year: deck.year, saved: new Date().toISOString().slice(0, 10), cards: deck.cards, state: deck.state })
+      ? writeKept({ year: deck.year, saved: new Date().toISOString().slice(0, 10), cards: deck.all, state: deck.state })
       : writeKept(null);
     status(ok ? (els.device.checked ? 'kept on this device. only the finished cards, never your files.' : 'removed from this device.') : 'this browser does not allow keeping anything here.');
   });

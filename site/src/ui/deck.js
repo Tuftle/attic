@@ -4,6 +4,7 @@
 
 import { scene, toSvg } from '../render/charts.js';
 import { cardPng, readPalette } from '../render/card.js';
+import { capDeck } from '../core/cap.js';
 
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -66,7 +67,8 @@ export class Deck {
     this.els = els;
     this.hooks = hooks;
     this.cards = [];
-    this.state = [];
+    this.all = [];
+    this.state = {};
     this.i = 0;
     this.year = 0;
     els.next.addEventListener('click', () => this.go(this.i + 1, 1));
@@ -75,12 +77,12 @@ export class Deck {
     els.keep.addEventListener('click', () => hooks.onKeep());
     els.save.addEventListener('click', () => this.save(this.i));
     els.names.addEventListener('click', () => {
-      const st = this.state[this.i];
+      const st = this.st(this.cards[this.i]);
       st.names = !st.names;
       this.render(0);
     });
     els.leave.addEventListener('click', () => {
-      const st = this.state[this.i];
+      const st = this.st(this.cards[this.i]);
       st.out = !st.out;
       this.render(0);
     });
@@ -102,11 +104,33 @@ export class Deck {
     });
   }
 
+  /** cards from the pipeline, the last card, and any state kept on this device */
   open(cards, final, year, saved) {
-    this.cards = [...cards, ...(final ? [final] : [])];
-    this.state = this.cards.map((c, n) => saved?.[n] || { names: false, out: false, revealed: !c.optIn });
+    const all = [...cards, ...(final ? [final] : [])];
+    this.all = all;
+    this.cards = [...capDeck(all.filter(c => c.id !== 'final')), ...all.filter(c => c.id === 'final')];
+    this.state = saved && typeof saved === 'object' && !Array.isArray(saved) ? { ...saved } : {};
     this.year = year;
     this.i = 0;
+    this.layout();
+    this.render(0);
+  }
+
+  /** the state of one card, by its id */
+  st(c) {
+    return this.state[c.id] || (this.state[c.id] = { names: false, out: false, revealed: !c.optIn });
+  }
+
+  /** open a "more from" card: its cards take its place */
+  expand(n) {
+    const c = this.cards[n];
+    if (!c || !c.more) return;
+    this.cards.splice(n, 1, ...c.more);
+    this.layout();
+    this.render(1);
+  }
+
+  layout() {
     const many = this.cards.length > 20;
     this.els.dots.hidden = many;
     this.els.progress.hidden = !many;
@@ -120,7 +144,6 @@ export class Deck {
       li.appendChild(b);
       return li;
     }));
-    this.render(0);
   }
 
   go(n, dir) {
@@ -130,11 +153,18 @@ export class Deck {
   }
 
   render(dir) {
-    const c = this.cards[this.i], st = this.state[this.i];
+    const c = this.cards[this.i], st = this.st(c);
     const art = el('article', `card src-${c.source}${st.out ? ' is-out' : ''}`);
     art.setAttribute('aria-roledescription', 'card');
     art.setAttribute('aria-label', `${this.i + 1} of ${this.cards.length}: ${c.title}`);
-    if (c.optIn && !st.revealed) {
+    if (c.more) {
+      art.classList.add('no-visual', 'is-more');
+      art.append(el('p', 'card-title', c.title), el('p', 'card-big big-m', c.big), el('p', 'card-caption', c.caption));
+      const b = el('button', 'primary', 'show them');
+      b.type = 'button';
+      b.addEventListener('click', () => this.expand(this.i));
+      art.appendChild(b);
+    } else if (c.optIn && !st.revealed) {
       art.append(
         el('p', 'card-title', c.title),
         el('p', 'card-big big-m', 'your most used words'),
@@ -166,7 +196,7 @@ export class Deck {
     this.els.progress.value = this.i + 1;
     [...this.els.dots.querySelectorAll('button')].forEach((b, n) => {
       if (n === this.i) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
-      b.classList.toggle('out', this.state[n].out);
+      b.classList.toggle('out', this.st(this.cards[n]).out);
     });
     this.els.prev.disabled = this.i === 0;
     this.els.next.disabled = this.i === this.cards.length - 1;
@@ -177,17 +207,19 @@ export class Deck {
     this.els.leave.setAttribute('aria-pressed', String(st.out));
     this.els.leave.textContent = st.out ? 'put it back' : 'leave out';
     this.els.leave.setAttribute('aria-label', st.out ? 'put this card back into what you save' : 'leave this card out of what you save');
-    this.els.save.disabled = !!(c.optIn && !st.revealed);
+    this.els.save.disabled = !!(c.more || (c.optIn && !st.revealed));
+    this.els.leave.hidden = !!c.more;
+    this.els.save.hidden = !!c.more;
     this.els.live.textContent = c.optIn && !st.revealed ? `${c.title}. hidden until you ask.` : [c.title, c.big, c.caption, c.detail].filter(Boolean).join('. ');
   }
 
   /** the cards that go into a saved set or copied text */
   included() {
-    return this.cards.map((c, n) => ({ card: c, st: this.state[n], n })).filter(x => !x.st.out && (!x.card.optIn || x.st.revealed));
+    return this.cards.map((c, n) => ({ card: c, st: this.st(c), n })).filter(x => !x.card.more && !x.st.out && (!x.card.optIn || x.st.revealed));
   }
 
   async png(n) {
-    const c = this.cards[n], st = this.state[n];
+    const c = this.cards[n], st = this.st(c);
     return cardPng(c, { size: this.hooks.size(), names: st.names, palette: readPalette(c.source) });
   }
 

@@ -44,7 +44,7 @@ drop in the files you can already download from the services you use. attic reco
 | steam | the saved licences page | games added and how they arrived. steam keeps no playtime by year |
 | amazon | `Retail.OrderHistory.1.csv` from request your data | orders, items, spent per currency, the biggest order, bought again. never addresses or payments |
 
-two or more sources make the last card richer: "your year in one page" picks the three or four numbers that stood out most.
+each source shows its best six cards first; the rest wait behind a "more from" card, one press away. two or more sources make the last card richer: "your year in one page" picks the three or four numbers that stood out most.
 
 ## run it
 
