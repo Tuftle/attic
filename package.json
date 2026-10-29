@@ -1,0 +1,18 @@
+{
+  "name": "attic",
+  "version": "0.0.0",
+  "private": true,
+  "description": "your year, from your own data. it runs in the browser and nothing is uploaded.",
+  "type": "module",
+  "license": "MPL-2.0",
+  "author": "tuftle <tuftle@proton.me>",
+  "repository": "github:Tuftle/attic",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.js\"",
+    "test:scale": "ATTIC_SCALE=1 node --test --test-concurrency=1 \"tests/**/*.test.js\"",
+    "lint": "node scripts/house-rules.mjs"
+  }
+}
