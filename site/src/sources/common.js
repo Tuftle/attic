@@ -19,6 +19,11 @@ export function field(obj, aliases) {
 export function parseUtc(v) {
   if (typeof v === 'number') return v > 1e11 ? v : v * 1000;
   if (typeof v !== 'string') return NaN;
+  // the usual shape, "2024-03-02T14:03:22Z", needs no clean up
+  if (v.length >= 20 && v.charCodeAt(10) === 84 && v.charCodeAt(v.length - 1) === 90) {
+    const t = Date.parse(v);
+    if (Number.isFinite(t)) return t;
+  }
   const s = v.trim();
   if (/^\d+(\.\d+)?$/.test(s)) return parseUtc(Number(s));
   let iso = s.replace(' ', 'T');

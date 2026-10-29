@@ -70,7 +70,8 @@ async function parse(files, onProgress, env = {}) {
         notes.push({ path: f.path, code: 'schema', message: 'this database does not look like a browser history. attic reads places.sqlite from firefox or wren, and the History file from chrome, edge or brave.' });
       }
     } catch (e) {
-      notes.push({ path: f.path, code: e.code || 'format', message: e.message });
+      const big = e instanceof RangeError || /memory|allocation/i.test(String(e && e.message));
+      notes.push({ path: f.path, code: big ? 'too-large' : e.code || 'format', message: big ? 'this history file is too large for your browser\'s memory. try a copy from a profile with less history, or another browser.' : e.message });
     } finally {
       db?.close();
     }

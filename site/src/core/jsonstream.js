@@ -40,9 +40,38 @@ export class JsonListSplitter {
 
   /** @param {Uint8Array} buf */
   push(buf) {
+    // items that start and end inside this chunk are parsed together, as
+    // one list, which is far faster than one parse per item
+    this.batchStart = -1;
+    this.batchEnd = -1;
+    try {
+      this.scan(buf);
+    } finally {
+      this.flush(buf);
+    }
+  }
+
+  flush(buf) {
+    if (this.batchStart === -1) return;
+    const text = this.decoder.decode(buf.subarray(this.batchStart, this.batchEnd));
+    this.batchStart = -1;
+    let items;
+    try {
+      items = JSON.parse(`[${text}]`);
+    } catch {
+      throw new JsonListError('bad-item', `an item after item ${this.count} is not valid json`, this.offset);
+    }
+    for (const item of items) {
+      this.count++;
+      this.onItem(item);
+    }
+  }
+
+  scan(buf) {
     let i = 0;
     const n = buf.length;
     let itemStart = this.state === ITEM ? 0 : -1;
+    const carried = this.state === ITEM;
     while (i < n) {
       const b = buf[i];
       switch (this.state) {
@@ -105,7 +134,12 @@ export class JsonListSplitter {
           this.inString = inString;
           this.escape = escape;
           if (end !== -1) {
-            this.emit(buf.subarray(itemStart, end));
+            if (itemStart === 0 && carried && this.parts.length) {
+              this.emit(buf.subarray(itemStart, end));
+            } else {
+              if (this.batchStart === -1) this.batchStart = itemStart;
+              this.batchEnd = end;
+            }
             itemStart = -1;
             this.state = AFTER;
             i = end;

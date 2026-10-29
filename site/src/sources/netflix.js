@@ -210,8 +210,11 @@ function deck(store, S, ctx, idx, profile, suffix) {
     const tried = started.filter(([, s]) => s.eps.size <= 2 && dataEnd - s.last >= LEFT_AFTER).sort((a, b) => a[1].first - b[1].first);
     const kept = started.filter(([, s]) => s.eps.size >= 3).length;
     make({
-      id: 'netflix.tried', title: 'tried and kept', big: count(tried.length, 'show'),
-      caption: words('you tried for an episode or two and then left, and {kept} you kept watching.', { kept: int(kept) }),
+      id: 'netflix.tried', title: 'tried and kept',
+      big: tried.length ? count(tried.length, 'show') : count(kept, 'show'),
+      caption: tried.length
+        ? words('you tried for an episode or two and then left, and {kept} you kept watching.', { kept: int(kept) })
+        : 'you kept watching. none were left after an episode or two.',
       detail: words('out of {n} you started {when}.', { n: count(started.length, 'new show'), when }),
       visual: tried.length ? bars(tried.slice(0, 5).map(([k, s]) => ({ label: name(str(k)), value: s.eps.size, display: count(s.eps.size, 'episode') }))) : null,
       values: { started: started.length, tried: tried.length, kept, triedNames: tried.slice(0, 5).map(([k]) => str(k)) },

@@ -91,6 +91,10 @@ const runner = createRunner(msg => {
     updateYearNote();
     if (!msg.quiet) show('found');
   } else if (msg.type === 'cards') {
+    if (!msg.cards.length) {
+      showError(`there is nothing from ${msg.year} in these files that attic can count. try another year.`);
+      return;
+    }
     deck.open(msg.cards, msg.final, msg.year);
     show('deck');
   } else if (msg.type === 'shape') {

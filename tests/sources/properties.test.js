@@ -67,3 +67,27 @@ test('the same file twice, and overlapping zips, count every event once', async 
     assert.deepEqual(await deck(twice, year, zone), await deck(inputs, year, zone));
   }
 });
+
+test('chat and browser history: order, duplicates and time zones', async () => {
+  const { chatgptFixture, claudeFixture, chatgptJson, claudeJson } = await import('../gen/chat.js');
+  const { browserFixture } = await import('../gen/browser.js');
+  const { loadSql } = await import('../lib/sqljs.js');
+  const env = { sqlite: loadSql };
+  const r = rng('shuffle-chat');
+  const gpt = chatgptFixture(), cl = claudeFixture(), br = await browserFixture();
+  const deckOf = async (inputs, tz, year = 2025) => strip(makeYear((await readAll(inputs, { env })).results, { year, timeZone: tz, now: NOW }).cards);
+
+  assert.deepEqual(await deckOf([file('conversations.json', chatgptJson(r.shuffle(gpt.convs)))], gpt.zone), await deckOf([file('conversations.json', chatgptJson(gpt.convs))], gpt.zone));
+  assert.deepEqual(await deckOf([file('conversations.json', claudeJson(r.shuffle(cl.convs)))], cl.zone), await deckOf([file('conversations.json', claudeJson(cl.convs))], cl.zone));
+  assert.deepEqual(await deckOf([file('a.zip', gpt.zip), file('b.zip', gpt.zip)], gpt.zone), await deckOf([file('a.zip', gpt.zip)], gpt.zone));
+  assert.deepEqual(await deckOf([file('h.zip', br.zip), file('places.sqlite', br.places)], br.zone), await deckOf([file('h.zip', br.zip)], br.zone));
+
+  // videos have no length, so a shift moves only the clock
+  const inside = yt.items.filter(it => it.t > Date.UTC(2025, 0, 3) && it.t < Date.UTC(2025, 11, 28));
+  const a = await deckOf([file('w.json', watchJson(inside))], 'UTC');
+  const b = await deckOf([file('w.json', watchJson(inside))], 'Etc/GMT+5'); // five hours west
+  const v = (cards, id) => cards.find(c => c.id === id).values;
+  assert.deepEqual(v(a, 'youtube.videos').videos, v(b, 'youtube.videos').videos);
+  assert.deepEqual(v(a, 'youtube.top-channels'), v(b, 'youtube.top-channels'));
+  for (let h = 0; h < 24; h++) assert.equal(v(b, 'youtube.clock').bins[(h + 19) % 24], v(a, 'youtube.clock').bins[h]);
+});
