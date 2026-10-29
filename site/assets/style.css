@@ -1,0 +1,115 @@
+/* attic. the tuftle palette is deliberate: cream and brown, a little leaf. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #f4efe6;
+  --card: #fbf8f2;
+  --text: #3b2f25;
+  --soft: #8a7b6b;
+  --link: #8a4b2a;
+  --line: #ddd2c1;
+  --glow: rgba(224, 168, 112, .3);
+  --leaf: #7a9a5a;
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --gap: clamp(16px, 4vw, 32px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #211c17;
+    --card: #2a231c;
+    --text: #e6dccd;
+    --soft: #9a8b7a;
+    --link: #d9a073;
+    --line: #3a3128;
+    --glow: rgba(217, 160, 115, .14);
+    --leaf: #7a9a5a;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.55 var(--sans);
+}
+
+h1, h2, h3 { font-family: var(--serif); font-weight: normal; line-height: 1.15; margin: 0 0 .5em; }
+h1 { font-size: clamp(34px, 7vw, 56px); }
+h2 { font-size: clamp(26px, 4.5vw, 34px); }
+h3 { font-size: 21px; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--link); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+code {
+  font-family: var(--mono);
+  font-size: .88em;
+  background: var(--glow);
+  padding: .05em .35em;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
+:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; border-radius: 4px; }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--card); padding: 8px 12px; z-index: 10; }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+/* pages of reading, such as the guides */
+
+.page { max-width: 760px; margin: 0 auto; padding: var(--gap) 16px 64px; }
+.page > header { padding: 24px 0 8px; }
+.page .lead { font-size: 19px; }
+.home { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--serif); font-size: 20px; }
+.home img { width: 28px; height: 28px; }
+
+.note {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--leaf);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 20px 0;
+}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px 10px; padding: 0; margin: 20px 0 8px; list-style: none; }
+.toc a {
+  display: inline-block; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--card); text-decoration: none;
+}
+
+.guide {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 22px 8px;
+  margin: 24px 0;
+}
+.guide ol { padding-left: 1.3em; margin: 0 0 1em; }
+.guide li { margin: .3em 0; }
+.guide dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0 0 1em; }
+.guide dt { font-weight: 600; }
+.guide dd { margin: 0; }
+.guide .tips { padding-left: 1.1em; }
+
+.foot { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 16px; font-size: 15px; }
+
+@media (max-width: 520px) {
+  .guide { padding: 18px 16px 4px; }
+  .guide dl { grid-template-columns: 1fr; gap: 2px; }
+  .guide dd { margin-bottom: 8px; }
+}
