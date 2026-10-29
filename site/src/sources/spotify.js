@@ -270,7 +270,7 @@ function cards(r, ctx) {
   if (firstListen.length && t[firstListen[0]] < S.y0 - 30 * DAY) {
     const before = where(firstListen, i => dur[i] >= PLAY_MS);
     const d = discovery(store.creator, before, plays);
-    if (d.seen) {
+    if (d.fresh) {
       out.push(card({
         ...base, id: 'spotify.discovery', title: 'new to you', big: percent(d.share),
         caption: words('of the {n} you played {when} were new to you.', { n: count(d.seen, 'artist'), when }),
@@ -340,7 +340,6 @@ function cards(r, ctx) {
       ...base, id: 'spotify.change', title: 'compared with last year', big: changeWords(delta),
       caption: words('music than {last}: {now} against {then}.', { last: S.lastYear, now: hours(ms), then: hours(prevMs) }),
       values: { ms, prevMs, change: delta },
-      stat: { label: 'change in listening', display: changeWords(delta), value: delta, change: delta },
     }));
   }
 

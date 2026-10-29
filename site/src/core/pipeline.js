@@ -3,6 +3,8 @@
 
 import { expandAll } from './files.js';
 import { detectAll, buildFound, SOURCES } from '../sources/index.js';
+import { finalCard } from './final.js';
+import { zone } from './timezone.js';
 
 /**
  * read every dropped file into events, source by source.
@@ -50,5 +52,9 @@ export function makeYear(results, ctx) {
       notes.push({ source: r.source.id, code: 'cards', message: `something went wrong making the ${r.source.name} cards.`, detail: String(e && e.stack || e) });
     }
   }
-  return { cards, notes };
+  const z = zone(ctx.timeZone);
+  const [y0, y1] = z.yearBounds(ctx.year);
+  const now = ctx.now ?? Date.now();
+  const final = finalCard(cards, { year: ctx.year, unfinished: now >= y0 && now < y1 });
+  return { cards, final, notes };
 }

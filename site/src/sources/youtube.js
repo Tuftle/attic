@@ -227,6 +227,7 @@ function cards(r, ctx) {
       ...base, id: 'youtube.rabbit-hole', title: 'the rabbit hole', big: count(hole.count, 'video'),
       caption: words('in a row on {day}, from {time}, never more than 10 minutes apart.', { day: dayName(z.dayKey(hole.start)), time: clockTime(p.hour, p.minute) }),
       values: { start: hole.start, end: hole.end, count: hole.count },
+      stat: { label: 'videos in a row', display: int(hole.count), value: hole.count, change: null },
     }));
   }
 
@@ -254,7 +255,7 @@ function cards(r, ctx) {
   const earlier = store.ofKind('video', 0, S.lo);
   if (earlier.length && t[earlier[0]] < S.y0 - 30 * DAY) {
     const d = discovery(store.creator, earlier, vids);
-    if (d.seen) {
+    if (d.fresh) {
       out.push(card({
         ...base, id: 'youtube.new-channels', title: 'new channels', big: count(d.fresh, 'channel'),
         caption: words('new to you {when}, out of {n} you watched.', { when, n: int(d.seen) }),
@@ -268,7 +269,6 @@ function cards(r, ctx) {
       ...base, id: 'youtube.change', title: 'compared with last year', big: changeWords(delta),
       caption: words('videos than {last}: {now} against {then}.', { last: S.lastYear, now: int(vids.length), then: int(prev) }),
       values: { videos: vids.length, prev, change: delta },
-      stat: { label: 'change in youtube', display: changeWords(delta), value: delta, change: delta },
     }));
   }
   return out;

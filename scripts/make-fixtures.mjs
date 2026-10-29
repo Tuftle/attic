@@ -13,6 +13,8 @@ export async function fixtures() {
   const { spotifyFixture } = await import('../tests/gen/spotify.js');
   const { netflixFixture } = await import('../tests/gen/netflix.js');
   const { youtubeFixture } = await import('../tests/gen/youtube.js');
+  const { chatgptFixture, claudeFixture } = await import('../tests/gen/chat.js');
+  const { browserFixture } = await import('../tests/gen/browser.js');
   const out = {};
   const add = (dir, name, fx) => {
     out[`${dir}/${name}`] = fx.zip;
@@ -21,6 +23,9 @@ export async function fixtures() {
   add('spotify', 'my_spotify_data.zip', spotifyFixture());
   add('netflix', 'netflix-report.zip', netflixFixture());
   add('youtube', 'takeout-youtube.zip', youtubeFixture());
+  add('chatgpt', 'chatgpt-export.zip', chatgptFixture());
+  add('claude', 'claude-export.zip', claudeFixture());
+  add('browser', 'browser-history.zip', await browserFixture());
   return out;
 }
 

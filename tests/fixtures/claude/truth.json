@@ -1,0 +1,205 @@
+{
+ "zone": "Europe/Berlin",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "claude.conversations": {
+    "conversations": 141,
+    "messages": 1412,
+    "user": 686,
+    "assistant": 726
+   },
+   "claude.words": {
+    "wrote": 11966,
+    "got": 32872,
+    "ratio": 2.7471168310212266
+   },
+   "claude.busiest": {
+    "day": "2025-04-16",
+    "messages": 21,
+    "bins": [
+     11,
+     9,
+     7,
+     0,
+     4,
+     0,
+     0,
+     5,
+     43,
+     46,
+     34,
+     38,
+     47,
+     42,
+     60,
+     66,
+     51,
+     36,
+     24,
+     35,
+     36,
+     55,
+     21,
+     16
+    ],
+    "peak": 15
+   },
+   "claude.longest": {
+    "title": "Northern Parade code",
+    "messages": 20
+   },
+   "claude.code": {
+    "withCode": 30,
+    "conversations": 141,
+    "share": 0.2127659574468085
+   },
+   "claude.top-words": {
+    "top": [
+     {
+      "word": "tests",
+      "n": 215
+     },
+     {
+      "word": "error",
+      "n": 211
+     },
+     {
+      "word": "garden",
+      "n": 206
+     },
+     {
+      "word": "tomatoes",
+      "n": 206
+     },
+     {
+      "word": "watering",
+      "n": 205
+     },
+     {
+      "word": "script",
+      "n": 198
+     },
+     {
+      "word": "loop",
+      "n": 193
+     },
+     {
+      "word": "python",
+      "n": 189
+     }
+    ]
+   },
+   "claude.please": {
+    "please": 137,
+    "thanks": 79
+   },
+   "claude.first": {
+    "title": "Broken Kites code",
+    "t": 1735737498331
+   }
+  },
+  "2026": {
+   "claude.conversations": {
+    "conversations": 85,
+    "messages": 773,
+    "user": 377,
+    "assistant": 396
+   },
+   "claude.words": {
+    "wrote": 6729,
+    "got": 18300,
+    "ratio": 2.719572001783326
+   },
+   "claude.busiest": {
+    "day": "2026-03-15",
+    "messages": 19,
+    "bins": [
+     8,
+     5,
+     4,
+     0,
+     0,
+     0,
+     0,
+     0,
+     11,
+     30,
+     33,
+     18,
+     28,
+     36,
+     33,
+     20,
+     16,
+     29,
+     25,
+     22,
+     11,
+     11,
+     15,
+     22
+    ],
+    "peak": 13
+   },
+   "claude.longest": {
+    "title": "Secret Foxes garden",
+    "messages": 20
+   },
+   "claude.code": {
+    "withCode": 9,
+    "conversations": 85,
+    "share": 0.10588235294117647
+   },
+   "claude.top-words": {
+    "top": [
+     {
+      "word": "garden",
+      "n": 139
+     },
+     {
+      "word": "tomatoes",
+      "n": 139
+     },
+     {
+      "word": "compost",
+      "n": 130
+     },
+     {
+      "word": "soil",
+      "n": 121
+     },
+     {
+      "word": "watering",
+      "n": 121
+     },
+     {
+      "word": "seedlings",
+      "n": 106
+     },
+     {
+      "word": "recipe",
+      "n": 100
+     },
+     {
+      "word": "dinner",
+      "n": 99
+     }
+    ]
+   },
+   "claude.please": {
+    "please": 83,
+    "thanks": 50
+   },
+   "claude.first": {
+    "title": "Hollow Orchard garden",
+    "t": 1767435729139
+   },
+   "claude.change": {
+    "conversations": 85,
+    "prev": 116,
+    "change": -0.2672413793103448
+   }
+  }
+ }
+}

@@ -8,9 +8,12 @@ import { zone, monthYear } from '../core/timezone.js';
 import spotify from './spotify.js';
 import netflix from './netflix.js';
 import youtube from './youtube.js';
+import chatgpt from './chatgpt.js';
+import claude from './claude.js';
+import browser from './browser.js';
 
 /** every source attic knows, in the order their cards appear */
-export const SOURCES = [spotify, netflix, youtube];
+export const SOURCES = [spotify, netflix, youtube, chatgpt, claude, browser];
 
 export const CLAIM_AT = 0.5;
 // inside a big zip, files that no source names are only sniffed when there are few

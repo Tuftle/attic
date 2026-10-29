@@ -193,7 +193,7 @@ export function spotifyTruth(items, year, tz = SPOTIFY.zone, now = SPOTIFY.now) 
     const before = new Set(kept.filter(it => it.kind === 'listen' && it.ms >= 30000 && it.t < start).map(it => it.artist));
     const seen = new Set(plays.map(it => it.artist));
     const fresh = [...seen].filter(a => !before.has(a)).length;
-    out['spotify.discovery'] = { seen: seen.size, fresh, share: fresh / seen.size };
+    if (fresh) out['spotify.discovery'] = { seen: seen.size, fresh, share: fresh / seen.size };
   }
   out['spotify.loyalty'] = { name: artists[0].key, ms: artists[0].w, share: artists[0].w / ms };
   const skipped = music.filter(it => it.skipped).length;

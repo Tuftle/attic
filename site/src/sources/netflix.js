@@ -189,6 +189,7 @@ function deck(store, S, ctx, idx, profile, suffix) {
       visual: heatmap(z, S.y0, S.y1, perDay, binge.day),
       detail: 'each square is a day. the darker it is, the more episodes.',
       values: { day: isoDay(binge.day), episodes: binge.w, show: str(show.key) },
+      stat: { label: 'episodes in one day', display: int(binge.w), value: binge.w, change: null },
     });
   }
 
@@ -279,7 +280,6 @@ function deck(store, S, ctx, idx, profile, suffix) {
       id: 'netflix.change', title: 'compared with last year', big: changeWords(delta),
       caption: words('netflix than {last}: {now} against {then}.', { last: S.lastYear, now: hours(ms), then: hours(prevMs) }),
       values: { ms, prevMs, change: delta },
-      stat: { label: 'change in watching', display: changeWords(delta), value: delta, change: delta },
     });
   }
   return out;

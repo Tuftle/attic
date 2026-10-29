@@ -1,0 +1,130 @@
+{
+ "zone": "America/Los_Angeles",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "browser.hours": {
+    "ms": 460530001.111084,
+    "visits": 4554
+   },
+   "browser.top-sites": {
+    "top": [
+     {
+      "name": "news.example.org",
+      "visits": 1027
+     },
+     {
+      "name": "mail.example.com",
+      "visits": 534
+     },
+     {
+      "name": "quietpaper2.example",
+      "visits": 338
+     },
+     {
+      "name": "silvermeadow3.example",
+      "visits": 237
+     },
+     {
+      "name": "harbouramber4.example",
+      "visits": 186
+     }
+    ]
+   },
+   "browser.weekday": {
+    "bins": [
+     603,
+     720,
+     534,
+     675,
+     725,
+     702,
+     595
+    ],
+    "peak": 4
+   },
+   "browser.rabbit-hole": {
+    "start": 1742592232000.568,
+    "end": 1742594760000.59,
+    "count": 22
+   },
+   "browser.night": {
+    "night": 152,
+    "visits": 4554,
+    "share": 0.03337725076855512
+   },
+   "browser.first-last": {
+    "first": {
+     "site": "quietpaper34.example",
+     "t": 1735799895000.568
+    },
+    "last": {
+     "site": "silvermeadow3.example",
+     "t": 1767237185000
+    }
+   }
+  },
+  "2026": {
+   "browser.hours": {
+    "ms": 367466000.0319824,
+    "visits": 3684
+   },
+   "browser.top-sites": {
+    "top": [
+     {
+      "name": "news.example.org",
+      "visits": 825
+     },
+     {
+      "name": "mail.example.com",
+      "visits": 403
+     },
+     {
+      "name": "quietpaper2.example",
+      "visits": 272
+     },
+     {
+      "name": "silvermeadow3.example",
+      "visits": 210
+     },
+     {
+      "name": "harbouramber4.example",
+      "visits": 164
+     }
+    ]
+   },
+   "browser.weekday": {
+    "bins": [
+     514,
+     480,
+     561,
+     565,
+     552,
+     589,
+     423
+    ],
+    "peak": 5
+   },
+   "browser.rabbit-hole": {
+    "start": 1783615440000.922,
+    "end": 1783618517000.95,
+    "count": 28
+   },
+   "browser.night": {
+    "night": 99,
+    "visits": 3684,
+    "share": 0.02687296416938111
+   },
+   "browser.first-last": {
+    "first": {
+     "site": "quietpaper2.example",
+     "t": 1767288225000.373
+    },
+    "last": {
+     "site": "silvermeadow3.example",
+     "t": 1792517819000.874
+    }
+   }
+  }
+ }
+}

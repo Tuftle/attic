@@ -132,7 +132,7 @@ export function youtubeTruth(items, year, tz = YOUTUBE.zone, now = YOUTUBE.now) 
     const before = new Set(kept.filter(it => it.t < start && it.channel).map(it => it.channel));
     const seen = new Set(vids.filter(it => it.channel).map(it => it.channel));
     const fresh = [...seen].filter(c => !before.has(c)).length;
-    out['youtube.new-channels'] = { seen: seen.size, fresh, share: fresh / seen.size };
+    if (fresh) out['youtube.new-channels'] = { seen: seen.size, fresh, share: fresh / seen.size };
   }
   const prev = prevRange(year, tz, now);
   if (earliest <= prev.start + 14 * DAY) {
