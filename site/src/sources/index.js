@@ -5,8 +5,12 @@ import { HEAD_BYTES, decodeText } from '../core/files.js';
 import { messages } from '../core/doctor.js';
 import { zone, monthYear } from '../core/timezone.js';
 
-/** @type {any[]} filled in as sources are added */
-export const SOURCES = [];
+import spotify from './spotify.js';
+import netflix from './netflix.js';
+import youtube from './youtube.js';
+
+/** every source attic knows, in the order their cards appear */
+export const SOURCES = [spotify, netflix, youtube];
 
 export const CLAIM_AT = 0.5;
 // inside a big zip, files that no source names are only sniffed when there are few

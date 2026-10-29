@@ -1,0 +1,361 @@
+{
+ "zone": "America/New_York",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "netflix.hours@1": {
+    "ms": 838080000,
+    "views": 340,
+    "months": [
+     74220000,
+     53160000,
+     65700000,
+     59760000,
+     88620000,
+     75960000,
+     88920000,
+     71040000,
+     50640000,
+     63720000,
+     81420000,
+     64920000
+    ]
+   },
+   "netflix.top-shows@1": {
+    "top": [
+     {
+      "name": "The Hollow Lights",
+      "ms": 63420000
+     },
+     {
+      "name": "The Paper Sailors",
+      "ms": 60360000
+     },
+     {
+      "name": "The Summer Hills",
+      "ms": 53160000
+     },
+     {
+      "name": "The Little Owls",
+      "ms": 47880000
+     },
+     {
+      "name": "The Velvet Orchard",
+      "ms": 46260000
+     }
+    ]
+   },
+   "netflix.binge@1": {
+    "day": "2025-11-08",
+    "episodes": 9,
+    "show": "The Little Owls"
+   },
+   "netflix.tried@1": {
+    "started": 26,
+    "tried": 4,
+    "kept": 22,
+    "triedNames": [
+     "The Velvet Echoes",
+     "The Distant Pilots",
+     "The Copper Parade",
+     "The Secret Lights"
+    ]
+   },
+   "netflix.first-last@1": {
+    "first": {
+     "title": "The Wild Radios: Season 2: Hollow Kites (Live)",
+     "t": 1735871795000
+    },
+    "last": {
+     "title": "The Quiet Rivers: Season 1: Summer Owls",
+     "t": 1767145096000
+    }
+   },
+   "netflix.night@1": {
+    "night": 22,
+    "views": 340,
+    "share": 0.06470588235294118
+   },
+   "netflix.devices@1": {
+    "top": [
+     {
+      "name": "Samsung 2021 QLED TV",
+      "ms": 470040000
+     },
+     {
+      "name": "iPhone 14",
+      "ms": 368040000
+     }
+    ]
+   },
+   "netflix.rewatch@1": {
+    "titles": 6,
+    "top": {
+     "title": "Blue Ghosts",
+     "days": 4
+    }
+   },
+   "netflix.hours@2": {
+    "ms": 403080000,
+    "views": 188,
+    "months": [
+     24900000,
+     26280000,
+     27900000,
+     35160000,
+     50040000,
+     46080000,
+     43740000,
+     29700000,
+     9840000,
+     53100000,
+     36900000,
+     19440000
+    ]
+   },
+   "netflix.top-shows@2": {
+    "top": [
+     {
+      "name": "The Golden Parade",
+      "ms": 97680000
+     },
+     {
+      "name": "The Lucky Ghosts",
+      "ms": 80640000
+     },
+     {
+      "name": "The Quiet Orchard",
+      "ms": 58680000
+     },
+     {
+      "name": "The Little Pilots",
+      "ms": 49500000
+     },
+     {
+      "name": "The Midnight Kites",
+      "ms": 45660000
+     }
+    ]
+   },
+   "netflix.binge@2": {
+    "day": "2025-02-19",
+    "episodes": 4,
+    "show": "The Golden Parade"
+   },
+   "netflix.first-last@2": {
+    "first": {
+     "title": "The Golden Parade: Season 1: Lazy Ghosts",
+     "t": 1735937269000
+    },
+    "last": {
+     "title": "The Lucky Ghosts: Season 2: Velvet Dreamers (Live)",
+     "t": 1766004995000
+    }
+   },
+   "netflix.night@2": {
+    "night": 0,
+    "views": 188,
+    "share": 0
+   },
+   "netflix.devices@2": {
+    "top": [
+     {
+      "name": "Amazon Fire TV Stick",
+      "ms": 204060000
+     },
+     {
+      "name": "iPad Air",
+      "ms": 199020000
+     }
+    ]
+   },
+   "netflix.rewatch@2": {
+    "titles": 112,
+    "top": {
+     "title": "The Lucky Ghosts: Season 1: Gentle Tides",
+     "days": 6
+    }
+   }
+  },
+  "2026": {
+   "netflix.hours@1": {
+    "ms": 652860000,
+    "views": 268,
+    "months": [
+     48420000,
+     76800000,
+     79020000,
+     68760000,
+     48480000,
+     83880000,
+     83160000,
+     42600000,
+     78060000,
+     43680000,
+     0,
+     0
+    ]
+   },
+   "netflix.top-shows@1": {
+    "top": [
+     {
+      "name": "The Silver Pilots",
+      "ms": 69720000
+     },
+     {
+      "name": "The Silver Parade",
+      "ms": 65880000
+     },
+     {
+      "name": "The Copper Satellites",
+      "ms": 60540000
+     },
+     {
+      "name": "The Quiet Parade",
+      "ms": 56820000
+     },
+     {
+      "name": "The Quiet Pilots",
+      "ms": 50940000
+     }
+    ]
+   },
+   "netflix.binge@1": {
+    "day": "2026-06-12",
+    "episodes": 5,
+    "show": "The Copper Satellites"
+   },
+   "netflix.tried@1": {
+    "started": 12,
+    "tried": 0,
+    "kept": 12,
+    "triedNames": []
+   },
+   "netflix.first-last@1": {
+    "first": {
+     "title": "The Quiet Rivers: Season 1: Silver Kites",
+     "t": 1767246600000
+    },
+    "last": {
+     "title": "Electric Machines",
+     "t": 1792108185000
+    }
+   },
+   "netflix.night@1": {
+    "night": 23,
+    "views": 268,
+    "share": 0.08582089552238806
+   },
+   "netflix.devices@1": {
+    "top": [
+     {
+      "name": "iPhone 14",
+      "ms": 359460000
+     },
+     {
+      "name": "Samsung 2021 QLED TV",
+      "ms": 293400000
+     }
+    ]
+   },
+   "netflix.rewatch@1": {
+    "titles": 39,
+    "top": {
+     "title": "The Quiet Parade: Season 1: Little Pilots (Live)",
+     "days": 4
+    }
+   },
+   "netflix.change@1": {
+    "ms": 652860000,
+    "prevMs": 685260000,
+    "change": -0.04728132387706856
+   },
+   "netflix.hours@2": {
+    "ms": 392940000,
+    "views": 175,
+    "months": [
+     55440000,
+     30660000,
+     46920000,
+     19500000,
+     46920000,
+     41340000,
+     41340000,
+     43680000,
+     44340000,
+     22800000,
+     0,
+     0
+    ]
+   },
+   "netflix.top-shows@2": {
+    "top": [
+     {
+      "name": "The Little Pilots",
+      "ms": 99360000
+     },
+     {
+      "name": "The Midnight Kites",
+      "ms": 72420000
+     },
+     {
+      "name": "The Quiet Orchard",
+      "ms": 69120000
+     },
+     {
+      "name": "The Paper Rivers",
+      "ms": 39540000
+     },
+     {
+      "name": "The Golden Parade",
+      "ms": 30840000
+     }
+    ]
+   },
+   "netflix.binge@2": {
+    "day": "2026-01-03",
+    "episodes": 4,
+    "show": "The Quiet Orchard"
+   },
+   "netflix.first-last@2": {
+    "first": {
+     "title": "The Lucky Ghosts: Season 2: Northern Echoes",
+     "t": 1767477448000
+    },
+    "last": {
+     "title": "The Midnight Pilots: Season 1: Winter Kites",
+     "t": 1791834956000
+    }
+   },
+   "netflix.night@2": {
+    "night": 0,
+    "views": 175,
+    "share": 0
+   },
+   "netflix.devices@2": {
+    "top": [
+     {
+      "name": "iPad Air",
+      "ms": 200580000
+     },
+     {
+      "name": "Amazon Fire TV Stick",
+      "ms": 192360000
+     }
+    ]
+   },
+   "netflix.rewatch@2": {
+    "titles": 118,
+    "top": {
+     "title": "The Lucky Ghosts: Season 1: Gentle Tides",
+     "days": 7
+    }
+   },
+   "netflix.change@2": {
+    "ms": 392940000,
+    "prevMs": 340140000,
+    "change": 0.15523019932968776
+   }
+  }
+ }
+}

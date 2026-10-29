@@ -165,8 +165,9 @@ export async function readJsonList(file, onItem, opts = {}) {
     try {
       value = JSON.parse(text);
     } catch {
-      // json.parse cannot say why, so let the splitter find the problem
-      const s = new JsonListSplitter(() => {});
+      // json.parse cannot say why. the splitter can, and it hands over every
+      // item before the problem, the same as the streaming path does.
+      const s = new JsonListSplitter(onItem);
       s.push(new TextEncoder().encode(text));
       s.end();
       throw new JsonListError('garbage', 'the file is not valid json', 0);

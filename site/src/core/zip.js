@@ -21,8 +21,8 @@ const SIG_LOCAL = 0x04034b50, SIG_CD = 0x02014b50, SIG_EOCD = 0x06054b50;
 const SIG_Z64_LOC = 0x07064b50, SIG_Z64_EOCD = 0x06064b50, SIG_DD = 0x08074b50;
 const MAX32 = 0xffffffff, MAX16 = 0xffff;
 
-/** counts for tests: how many entries were inflated */
-export const stats = { inflates: 0 };
+/** for tests: how many entries were inflated, and the last few by path */
+export const stats = { inflates: 0, paths: [] };
 
 const u16 = (b, i) => b[i] | (b[i + 1] << 8);
 const u32 = (b, i) => (b[i] | (b[i + 1] << 8) | (b[i + 2] << 16) | (b[i + 3] << 24)) >>> 0;
@@ -250,6 +250,8 @@ export async function* entryChunks(blob, entry, opts = {}) {
       }
     } else {
       stats.inflates++;
+      stats.paths.push(entry.path);
+      if (stats.paths.length > 64) stats.paths.shift();
       const out = [];
       const inflate = new Inflate(data => { if (data.length) out.push(data); });
       for (;;) {
