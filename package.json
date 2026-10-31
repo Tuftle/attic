@@ -1,0 +1,28 @@
+{
+  "name": "attic",
+  "version": "0.0.0",
+  "private": true,
+  "description": "your year, from your own data. it runs in the browser and nothing is uploaded.",
+  "type": "module",
+  "license": "MPL-2.0",
+  "author": "tuftle <tuftle@proton.me>",
+  "repository": "github:Tuftle/attic",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.js\"",
+    "test:scale": "ATTIC_SCALE=1 node --test --test-concurrency=1 \"tests/**/*.test.js\"",
+    "lint": "node scripts/house-rules.mjs",
+    "build-guides": "node scripts/build-guides.mjs",
+    "make-fixtures": "node scripts/make-fixtures.mjs",
+    "walkthrough": "node tests/visual/walkthrough.mjs",
+    "serve": "node scripts/serve.mjs",
+    "privacy-scan": "node scripts/privacy-scan.mjs",
+    "test:browser": "ATTIC_BROWSER=1 node --test --test-concurrency=1 \"tests/privacy/*.test.js\" \"tests/browser/*.test.js\"",
+    "build-single": "node scripts/build-single.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "4.13.0"
+  }
+}

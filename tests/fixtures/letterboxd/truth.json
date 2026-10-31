@@ -1,0 +1,142 @@
+{
+ "zone": "UTC",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "letterboxd.films": {
+    "films": 189,
+    "months": [
+     21,
+     20,
+     12,
+     17,
+     17,
+     15,
+     20,
+     8,
+     12,
+     16,
+     18,
+     13
+    ]
+   },
+   "letterboxd.rewatches": {
+    "rewatches": 22,
+    "films": 189
+   },
+   "letterboxd.ratings": {
+    "rated": 140,
+    "average": 2.6785714285714284,
+    "spread": [
+     17,
+     15,
+     9,
+     21,
+     10,
+     17,
+     11,
+     10,
+     17,
+     13
+    ]
+   },
+   "letterboxd.decade": {
+    "decade": 2020,
+    "films": 67
+   },
+   "letterboxd.month": {
+    "month": 0,
+    "films": 21
+   },
+   "letterboxd.weekday": {
+    "bins": [
+     20,
+     22,
+     24,
+     20,
+     43,
+     39,
+     21
+    ],
+    "peak": 4
+   },
+   "letterboxd.first-last": {
+    "first": "Wild Pilots",
+    "last": "Lucky Sailors"
+   },
+   "letterboxd.change": {
+    "films": 189,
+    "prev": 192,
+    "change": -0.015625
+   }
+  },
+  "2026": {
+   "letterboxd.films": {
+    "films": 163,
+    "months": [
+     16,
+     17,
+     17,
+     20,
+     20,
+     4,
+     21,
+     20,
+     16,
+     12,
+     0,
+     0
+    ]
+   },
+   "letterboxd.rewatches": {
+    "rewatches": 17,
+    "films": 163
+   },
+   "letterboxd.ratings": {
+    "rated": 134,
+    "average": 2.6828358208955225,
+    "spread": [
+     9,
+     19,
+     16,
+     13,
+     10,
+     17,
+     13,
+     14,
+     13,
+     10
+    ]
+   },
+   "letterboxd.decade": {
+    "decade": 2020,
+    "films": 61
+   },
+   "letterboxd.month": {
+    "month": 6,
+    "films": 21
+   },
+   "letterboxd.weekday": {
+    "bins": [
+     14,
+     14,
+     24,
+     14,
+     38,
+     42,
+     17
+    ],
+    "peak": 5
+   },
+   "letterboxd.first-last": {
+    "first": "Distant Satellites",
+    "last": "Wild Satellites (Live)"
+   },
+   "letterboxd.change": {
+    "films": 163,
+    "prev": 158,
+    "change": 0.03164556962025317
+   }
+  }
+ }
+}

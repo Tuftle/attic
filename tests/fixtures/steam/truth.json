@@ -1,0 +1,105 @@
+{
+ "zone": "UTC",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "steam.games": {
+    "games": 29,
+    "months": [
+     1,
+     1,
+     3,
+     8,
+     5,
+     2,
+     0,
+     3,
+     0,
+     2,
+     3,
+     1
+    ]
+   },
+   "steam.how": {
+    "top": [
+     {
+      "name": "Complimentary",
+      "games": 13
+     },
+     {
+      "name": "Steam Store",
+      "games": 12
+     },
+     {
+      "name": "Gift/Guest Pass",
+      "games": 3
+     },
+     {
+      "name": "Retail",
+      "games": 1
+     }
+    ]
+   },
+   "steam.month": {
+    "month": 3,
+    "games": 8
+   },
+   "steam.first-last": {
+    "first": "Distant Radios",
+    "last": "Distant Ghosts"
+   }
+  },
+  "2026": {
+   "steam.games": {
+    "games": 19,
+    "months": [
+     6,
+     2,
+     0,
+     1,
+     2,
+     1,
+     2,
+     3,
+     0,
+     2,
+     0,
+     0
+    ]
+   },
+   "steam.how": {
+    "top": [
+     {
+      "name": "Complimentary",
+      "games": 9
+     },
+     {
+      "name": "Steam Store",
+      "games": 8
+     },
+     {
+      "name": "Gift/Guest Pass",
+      "games": 1
+     },
+     {
+      "name": "Retail",
+      "games": 1
+     }
+    ]
+   },
+   "steam.month": {
+    "month": 0,
+    "games": 6
+   },
+   "steam.first-last": {
+    "first": "Secret Harbour",
+    "last": "Winter Owls"
+   },
+   "steam.change": {
+    "games": 19,
+    "prev": 25,
+    "change": -0.24
+   }
+  }
+ }
+}

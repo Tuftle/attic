@@ -1,0 +1,356 @@
+{
+  "about": "how to request each export that attic reads. dedicated to the public domain under cc0 1.0, see guides.LICENSE.txt. text in backticks is shown as code.",
+  "updated": "2026-10-29",
+  "guides": [
+    {
+      "id": "spotify",
+      "name": "spotify",
+      "source": "spotify",
+      "where": {
+        "text": "spotify.com/account/privacy",
+        "url": "https://www.spotify.com/account/privacy/"
+      },
+      "wait": "spotify says up to 30 days. the smaller account data often comes in about 5 days. the extended history can take longer.",
+      "steps": [
+        "sign in to your spotify account on the web and open privacy settings.",
+        "under download your data, tick extended streaming history. you can tick account data too.",
+        "press request data, then confirm the request from the email spotify sends you.",
+        "when the next email arrives, download the zip. the link stops working after a while, so save the file."
+      ],
+      "file": "a zip such as `my_spotify_data.zip`. inside is a folder of files named like `Streaming_History_Audio_2024-2026_0.json`. drop the whole zip.",
+      "tips": [
+        "account data on its own holds about a year of plays, with less detail. attic reads it, but the extended history tells a fuller story.",
+        "podcasts are kept apart from music."
+      ],
+      "checked": null
+    },
+    {
+      "id": "netflix",
+      "name": "netflix",
+      "source": "netflix",
+      "where": {
+        "text": "netflix.com/account/getmyinfo",
+        "url": "https://www.netflix.com/account/getmyinfo"
+      },
+      "wait": "up to 30 days, often sooner.",
+      "steps": [
+        "sign in on the web as the account owner and open the page to download your personal information.",
+        "press submit request, then confirm it from the email netflix sends.",
+        "when the next email arrives, download the zip."
+      ],
+      "file": "a zip such as `netflix-report.zip`. inside is `CONTENT_INTERACTION/ViewingActivity.csv`. drop the zip or just that file.",
+      "tips": [
+        "the viewing activity page has a quicker download, `NetflixViewingHistory.csv`. it holds titles and dates but no times or lengths, so attic needs the full request instead.",
+        "every profile on the account is included. attic shows each one on its own."
+      ],
+      "checked": null
+    },
+    {
+      "id": "youtube",
+      "name": "youtube",
+      "source": "youtube",
+      "where": {
+        "text": "takeout.google.com",
+        "url": "https://takeout.google.com/"
+      },
+      "wait": "usually minutes to a few hours. large accounts can take a day or more.",
+      "steps": [
+        "open google takeout and press deselect all.",
+        "scroll down to youtube and youtube music and tick it.",
+        "press all youtube data included, press deselect all, then tick only history.",
+        "press multiple formats and set history to json. html works too, but json is more reliable.",
+        "press next step. choose to get a download link by email, export once, as a zip, then create the export."
+      ],
+      "file": "a takeout zip holding `Takeout/YouTube and YouTube Music/history/watch-history.json`. drop the zip. attic opens only that file, even in a big archive.",
+      "tips": [
+        "watch history lists what you watched and when, not for how long, so attic counts videos, never hours.",
+        "if watch history was paused, those months will be missing."
+      ],
+      "checked": null
+    },
+    {
+      "id": "chatgpt",
+      "name": "chatgpt",
+      "source": "chatgpt",
+      "where": {
+        "text": "chatgpt.com, settings, data controls",
+        "url": "https://chatgpt.com/"
+      },
+      "wait": "usually minutes, sometimes a few hours.",
+      "steps": [
+        "open chatgpt, then settings, then data controls.",
+        "press export data, then confirm.",
+        "open the email and download the zip. the link stops working after about a day."
+      ],
+      "file": "a zip holding `conversations.json`. drop the zip.",
+      "tips": [
+        "attic counts conversations, messages and words. conversation titles and your most used words are hidden in saved images unless you turn names on."
+      ],
+      "checked": null
+    },
+    {
+      "id": "claude",
+      "name": "claude",
+      "source": "claude",
+      "where": {
+        "text": "claude.ai, settings, privacy",
+        "url": "https://claude.ai/"
+      },
+      "wait": "usually minutes to a few hours.",
+      "steps": [
+        "open claude, then settings, then privacy.",
+        "press export data.",
+        "open the email and download the zip. the link stops working after a while."
+      ],
+      "file": "a zip holding `conversations.json`. drop the zip.",
+      "tips": [
+        "conversation titles are hidden in saved images unless you turn names on."
+      ],
+      "checked": null
+    },
+    {
+      "id": "firefox",
+      "name": "firefox",
+      "source": "browser",
+      "where": {
+        "text": "`about:support` in the address bar",
+        "url": null
+      },
+      "wait": "right away.",
+      "steps": [
+        "type `about:support` in the address bar and press enter.",
+        "next to profile folder, press open folder.",
+        "quit firefox completely. while it runs, the newest visits may sit in a side file.",
+        "copy `places.sqlite` from that folder to your desktop or downloads folder."
+      ],
+      "file": "`places.sqlite`. drop the copy, not the original.",
+      "tips": [
+        "attic reads only site names and visit times. it never reads page titles, full addresses or searches."
+      ],
+      "checked": null
+    },
+    {
+      "id": "wren",
+      "name": "wren",
+      "source": "browser",
+      "where": {
+        "text": "`about:support` in the address bar",
+        "url": null
+      },
+      "wait": "right away.",
+      "steps": [
+        "type `about:support` in the address bar and press enter.",
+        "next to profile folder, press open folder.",
+        "quit wren completely.",
+        "copy `places.sqlite` from that folder to your desktop or downloads folder."
+      ],
+      "file": "`places.sqlite`. drop the copy, not the original.",
+      "tips": [
+        "wren already has a year in review of its own. this one is the version you can share."
+      ],
+      "checked": null
+    },
+    {
+      "id": "chrome",
+      "name": "chrome",
+      "source": "browser",
+      "where": {
+        "text": "`chrome://version` in the address bar",
+        "url": null
+      },
+      "wait": "right away.",
+      "steps": [
+        "type `chrome://version` in the address bar and press enter.",
+        "find the profile path and open that folder in your file manager.",
+        "quit chrome completely, so the file is not locked.",
+        "copy the file named `History`, which has no extension, to your desktop or downloads folder."
+      ],
+      "file": "`History`. drop the copy, not the original.",
+      "tips": [
+        "on a mac the folder sits inside your library, which finder hides. in finder, use go to folder and paste the profile path.",
+        "attic reads only site names and visit times. it never reads page titles, full addresses or searches."
+      ],
+      "checked": null
+    },
+    {
+      "id": "edge",
+      "name": "edge",
+      "source": "browser",
+      "where": {
+        "text": "`edge://version` in the address bar",
+        "url": null
+      },
+      "wait": "right away.",
+      "steps": [
+        "type `edge://version` in the address bar and press enter.",
+        "find the profile path and open that folder in your file manager.",
+        "quit edge completely, so the file is not locked.",
+        "copy the file named `History`, which has no extension, to your desktop or downloads folder."
+      ],
+      "file": "`History`. drop the copy, not the original.",
+      "tips": [],
+      "checked": null
+    },
+    {
+      "id": "brave",
+      "name": "brave",
+      "source": "browser",
+      "where": {
+        "text": "`brave://version` in the address bar",
+        "url": null
+      },
+      "wait": "right away.",
+      "steps": [
+        "type `brave://version` in the address bar and press enter.",
+        "find the profile path and open that folder in your file manager.",
+        "quit brave completely, so the file is not locked.",
+        "copy the file named `History`, which has no extension, to your desktop or downloads folder."
+      ],
+      "file": "`History`. drop the copy, not the original.",
+      "tips": [],
+      "checked": null
+    },
+    {
+      "id": "discord",
+      "name": "discord",
+      "source": "discord",
+      "where": {
+        "text": "discord settings, data and privacy",
+        "url": "https://discord.com/app"
+      },
+      "wait": "discord says up to 30 days. it is often a few days.",
+      "steps": [
+        "open discord, then user settings, then data and privacy.",
+        "press request all of my data, choose what to include, and confirm.",
+        "when the email arrives, download the zip. the link stops working after a while."
+      ],
+      "file": "a zip such as `package.zip`, with a `messages` folder. drop the whole zip.",
+      "tips": [
+        "only messages you sent are in it. attic never opens the activity folder, and never names who you sent direct messages to.",
+        "server and channel names are hidden in saved images unless you turn names on."
+      ],
+      "checked": null
+    },
+    {
+      "id": "letterboxd",
+      "name": "letterboxd",
+      "source": "letterboxd",
+      "where": {
+        "text": "letterboxd.com/settings/data",
+        "url": "https://letterboxd.com/settings/data/"
+      },
+      "wait": "right away.",
+      "steps": [
+        "sign in on the web and open settings, then data.",
+        "press export your data.",
+        "the zip downloads straight away."
+      ],
+      "file": "a zip with `diary.csv`. drop the whole zip.",
+      "tips": [
+        "films are counted on the day you watched them. without a diary, on the day you logged them."
+      ],
+      "checked": null
+    },
+    {
+      "id": "goodreads",
+      "name": "goodreads",
+      "source": "goodreads",
+      "where": {
+        "text": "goodreads.com/review/import",
+        "url": "https://www.goodreads.com/review/import"
+      },
+      "wait": "usually a few minutes.",
+      "steps": [
+        "sign in on the web and open my books, then import and export.",
+        "press export library.",
+        "when the link appears, download the file."
+      ],
+      "file": "`goodreads_library_export.csv`. drop it.",
+      "tips": [
+        "books count when they are on your read shelf with a date read. reviews and private notes are never read."
+      ],
+      "checked": null
+    },
+    {
+      "id": "strava",
+      "name": "strava",
+      "source": "strava",
+      "where": {
+        "text": "strava settings, my account",
+        "url": "https://www.strava.com/account"
+      },
+      "wait": "usually a few hours.",
+      "steps": [
+        "sign in on the web and open settings, then my account.",
+        "under download or delete your account, press get started, then request your archive.",
+        "when the email arrives, download the zip."
+      ],
+      "file": "a zip with `activities.csv`. drop the whole zip.",
+      "tips": [
+        "attic reads the type, time, distance and climb of each activity. never names, notes, routes or photos."
+      ],
+      "checked": null
+    },
+    {
+      "id": "apple",
+      "name": "apple music",
+      "source": "apple",
+      "where": {
+        "text": "privacy.apple.com",
+        "url": "https://privacy.apple.com/"
+      },
+      "wait": "apple says up to 7 days.",
+      "steps": [
+        "sign in at privacy.apple.com and choose to get a copy of your data.",
+        "tick apple media services information, then continue and confirm.",
+        "when the email arrives, download the files."
+      ],
+      "file": "a zip holding `Apple Music Play Activity.csv`. drop the whole zip.",
+      "tips": [
+        "ip addresses and device details in the file are never read.",
+        "if only the daily tracks file is there, the deck has days but no hours."
+      ],
+      "checked": null
+    },
+    {
+      "id": "steam",
+      "name": "steam",
+      "source": "steam",
+      "where": {
+        "text": "store.steampowered.com/account/licenses",
+        "url": "https://store.steampowered.com/account/licenses/"
+      },
+      "wait": "right away.",
+      "steps": [
+        "sign in on the web and open the licences and product key activations page.",
+        "save the page from your browser's menu, as a web page or html only."
+      ],
+      "file": "the saved page, such as `Licenses.html`. drop it.",
+      "tips": [
+        "steam keeps no playtime by year, so the deck is about the games you added."
+      ],
+      "checked": null
+    },
+    {
+      "id": "amazon",
+      "name": "amazon",
+      "source": "amazon",
+      "where": {
+        "text": "amazon privacy central, request your data",
+        "url": "https://www.amazon.com/hz/privacy-central/data-requests/preview.html"
+      },
+      "wait": "usually a few days, up to a month.",
+      "steps": [
+        "sign in and open request your data.",
+        "choose your orders, then submit and confirm from the email.",
+        "when the download is ready, download the zip."
+      ],
+      "file": "a zip with `Retail.OrderHistory.1.csv` inside. drop the whole zip.",
+      "tips": [
+        "attic reads dates, amounts and product names. never addresses, payment details or gift messages.",
+        "money is added up per currency, never converted."
+      ],
+      "checked": null
+    }
+  ]
+}

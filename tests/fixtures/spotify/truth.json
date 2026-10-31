@@ -1,0 +1,344 @@
+{
+ "zone": "Europe/Amsterdam",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "spotify.hours": {
+    "ms": 641445467,
+    "plays": 2878,
+    "months": [
+     45793527,
+     42210144,
+     51013114,
+     42794869,
+     68450056,
+     50343408,
+     70293372,
+     62778050,
+     57936142,
+     43643643,
+     52044711,
+     54144431
+    ]
+   },
+   "spotify.top-artists": {
+    "top": [
+     {
+      "name": "Copper Lights",
+      "ms": 180758564
+     },
+     {
+      "name": "The Lazy Radios",
+      "ms": 81680428
+     },
+     {
+      "name": "Blue Rivers",
+      "ms": 57086812
+     },
+     {
+      "name": "The Golden Meadow",
+      "ms": 39964089
+     },
+     {
+      "name": "Gentle Orchard",
+      "ms": 29175223
+     }
+    ],
+    "ms": 641445467
+   },
+   "spotify.top-tracks": {
+    "top": [
+     {
+      "title": "Midnight Harbour",
+      "artist": "Copper Lights",
+      "plays": 93
+     },
+     {
+      "title": "Silver Tides",
+      "artist": "Copper Lights",
+      "plays": 84
+     },
+     {
+      "title": "Golden Machines",
+      "artist": "Copper Lights",
+      "plays": 82
+     },
+     {
+      "title": "Silver Tides 1",
+      "artist": "Copper Lights",
+      "plays": 47
+     },
+     {
+      "title": "Silver Pilots",
+      "artist": "Copper Lights",
+      "plays": 46
+     }
+    ]
+   },
+   "spotify.top-album": {
+    "name": "Gentle Pilots",
+    "artist": "Copper Lights",
+    "ms": 69311626
+   },
+   "spotify.peak-day": {
+    "day": "2025-09-20",
+    "ms": 14129346
+   },
+   "spotify.clock": {
+    "bins": [
+     66,
+     115,
+     75,
+     36,
+     14,
+     18,
+     43,
+     87,
+     160,
+     148,
+     95,
+     91,
+     113,
+     163,
+     159,
+     152,
+     71,
+     164,
+     155,
+     189,
+     199,
+     184,
+     220,
+     161
+    ],
+    "peak": 22
+   },
+   "spotify.night": {
+    "night": 306,
+    "plays": 2878,
+    "share": 0.1063238359972203
+   },
+   "spotify.session": {
+    "start": 1758362400000,
+    "end": 1758376606000,
+    "count": 70,
+    "ms": 14129346
+   },
+   "spotify.discovery": {
+    "seen": 36,
+    "fresh": 8,
+    "share": 0.2222222222222222
+   },
+   "spotify.loyalty": {
+    "name": "Copper Lights",
+    "ms": 180758564,
+    "share": 0.2817988017678204
+   },
+   "spotify.skips": {
+    "skipped": 613,
+    "started": 3266,
+    "share": 0.18769136558481322
+   },
+   "spotify.repeat": {
+    "title": "Quiet Dreamers",
+    "artist": "The Golden Meadow",
+    "day": "2025-06-14",
+    "plays": 15
+   },
+   "spotify.first-last": {
+    "first": {
+     "title": "Summer Dreamers",
+     "artist": "The Lazy Radios",
+     "t": 1735763516000
+    },
+    "last": {
+     "title": "Blue Sailors",
+     "artist": "Copper Lights",
+     "t": 1767220994000
+    }
+   },
+   "spotify.change": {
+    "ms": 641445467,
+    "prevMs": 688029445,
+    "change": -0.06770637265386222
+   },
+   "spotify.podcasts": {
+    "ms": 288180000,
+    "episodes": 120,
+    "top": {
+     "name": "The Northern Gardens",
+     "ms": 154800000
+    }
+   }
+  },
+  "2026": {
+   "spotify.hours": {
+    "ms": 490713272,
+    "plays": 2203,
+    "months": [
+     61856202,
+     56466058,
+     47766055,
+     57276325,
+     56051492,
+     34991740,
+     42909493,
+     49458908,
+     49731504,
+     34205495,
+     0,
+     0
+    ]
+   },
+   "spotify.top-artists": {
+    "top": [
+     {
+      "name": "Copper Lights",
+      "ms": 129300539
+     },
+     {
+      "name": "The Lazy Radios",
+      "ms": 57088922
+     },
+     {
+      "name": "Blue Rivers",
+      "ms": 38736750
+     },
+     {
+      "name": "The Golden Meadow",
+      "ms": 30999765
+     },
+     {
+      "name": "Gentle Orchard",
+      "ms": 25225376
+     }
+    ],
+    "ms": 490713272
+   },
+   "spotify.top-tracks": {
+    "top": [
+     {
+      "title": "Midnight Harbour",
+      "artist": "Copper Lights",
+      "plays": 79
+     },
+     {
+      "title": "Silver Tides",
+      "artist": "Copper Lights",
+      "plays": 59
+     },
+     {
+      "title": "Golden Machines",
+      "artist": "Copper Lights",
+      "plays": 53
+     },
+     {
+      "title": "Silver Tides 1",
+      "artist": "Copper Lights",
+      "plays": 29
+     },
+     {
+      "title": "Silver Pilots",
+      "artist": "Copper Lights",
+      "plays": 29
+     }
+    ]
+   },
+   "spotify.top-album": {
+    "name": "Gentle Pilots",
+    "artist": "Copper Lights",
+    "ms": 48100129
+   },
+   "spotify.peak-day": {
+    "day": "2026-02-24",
+    "ms": 7120210
+   },
+   "spotify.clock": {
+    "bins": [
+     111,
+     81,
+     41,
+     32,
+     3,
+     0,
+     12,
+     74,
+     163,
+     124,
+     74,
+     68,
+     79,
+     86,
+     104,
+     75,
+     52,
+     107,
+     156,
+     167,
+     118,
+     148,
+     166,
+     162
+    ],
+    "peak": 19
+   },
+   "spotify.night": {
+    "night": 268,
+    "plays": 2203,
+    "share": 0.12165229232864276
+   },
+   "spotify.session": {
+    "start": 1778326955000,
+    "end": 1778331828000,
+    "count": 14,
+    "ms": 3853000
+   },
+   "spotify.discovery": {
+    "seen": 40,
+    "fresh": 4,
+    "share": 0.1
+   },
+   "spotify.loyalty": {
+    "name": "Copper Lights",
+    "ms": 129300539,
+    "share": 0.2634950925068927
+   },
+   "spotify.skips": {
+    "skipped": 531,
+    "started": 2546,
+    "share": 0.20856245090337786
+   },
+   "spotify.repeat": {
+    "title": "Golden Machines",
+    "artist": "Copper Lights",
+    "day": "2026-10-10",
+    "plays": 4
+   },
+   "spotify.first-last": {
+    "first": {
+     "title": "Summer Tides",
+     "artist": "The Lazy Radios",
+     "t": 1767270667000
+    },
+    "last": {
+     "title": "Blue Bees",
+     "artist": "Paper Meadow",
+     "t": 1792507911983
+    }
+   },
+   "spotify.change": {
+    "ms": 490713272,
+    "prevMs": 531994361,
+    "change": -0.07759685445237266
+   },
+   "spotify.podcasts": {
+    "ms": 203580000,
+    "episodes": 86,
+    "top": {
+     "name": "The Northern Gardens",
+     "ms": 103800000
+    }
+   }
+  }
+ }
+}

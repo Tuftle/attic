@@ -1,0 +1,129 @@
+{
+ "zone": "UTC",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "goodreads.books": {
+    "books": 38,
+    "months": [
+     3,
+     3,
+     0,
+     2,
+     1,
+     2,
+     5,
+     7,
+     2,
+     5,
+     6,
+     2
+    ]
+   },
+   "goodreads.pages": {
+    "pages": 15762,
+    "books": 33
+   },
+   "goodreads.longest": {
+    "title": "Distant Gardens",
+    "pages": 896
+   },
+   "goodreads.authors": {
+    "top": [
+     {
+      "name": "The Hollow Dreamers",
+      "books": 13
+     },
+     {
+      "name": "Silver Tides",
+      "books": 5
+     },
+     {
+      "name": "Hollow Rivers",
+      "books": 4
+     },
+     {
+      "name": "Broken Foxes",
+      "books": 2
+     },
+     {
+      "name": "Quiet Orchard",
+      "books": 2
+     }
+    ]
+   },
+   "goodreads.ratings": {
+    "rated": 32,
+    "average": 3.625
+   },
+   "goodreads.oldest": {
+    "title": "Amber Harbour",
+    "year": 1832
+   }
+  },
+  "2026": {
+   "goodreads.books": {
+    "books": 28,
+    "months": [
+     1,
+     5,
+     4,
+     2,
+     4,
+     1,
+     5,
+     2,
+     3,
+     1,
+     0,
+     0
+    ]
+   },
+   "goodreads.pages": {
+    "pages": 13690,
+    "books": 26
+   },
+   "goodreads.longest": {
+    "title": "Lazy Foxes",
+    "pages": 895
+   },
+   "goodreads.authors": {
+    "top": [
+     {
+      "name": "The Hollow Dreamers",
+      "books": 8
+     },
+     {
+      "name": "Silver Tides",
+      "books": 3
+     },
+     {
+      "name": "Winter Lanterns",
+      "books": 3
+     },
+     {
+      "name": "The Lazy Harbour",
+      "books": 2
+     },
+     {
+      "name": "Hollow Rivers",
+      "books": 2
+     }
+    ]
+   },
+   "goodreads.ratings": {
+    "rated": 22,
+    "average": 3.727272727272727
+   },
+   "goodreads.oldest": {
+    "title": "Midnight Harbour (Live)",
+    "year": 1846
+   },
+   "goodreads.change": {
+    "books": 28,
+    "prev": 30,
+    "change": -0.06666666666666667
+   }
+  }
+ }
+}

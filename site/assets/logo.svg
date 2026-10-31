@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="attic">
+  <style>
+    .roof { fill: none; stroke: #8a4b2a; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+    .glow { fill: #e0a870; }
+    .leaf { fill: #7a9a5a; }
+    @media (prefers-color-scheme: dark) { .roof { stroke: #d9a073; } .glow { fill: #d9a073; } }
+  </style>
+  <path class="roof" d="M8 34 L32 12 L56 34"/>
+  <path class="roof" d="M16 28 V54 H48 V28"/>
+  <circle class="glow" cx="32" cy="34" r="7"/>
+  <path class="leaf" d="M44 12 c6 0 9 3 9 9 c-6 0 -9 -3 -9 -9 z"/>
+</svg>

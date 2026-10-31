@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; worker-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="darkreader-lock">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="your year, from your own data. drop in the files you can download from spotify, netflix, youtube, chatgpt, claude or your browser. it happens in this page. nothing is uploaded.">
+  <title>attic: your year, from your own data</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="module" src="src/app.js"></script>
+</head>
+<body class="app">
+  <a class="skip" href="#main">skip to the page</a>
+  <header class="top">
+    <a class="home" href="./"><img src="assets/logo.svg" alt="" width="28" height="28">attic</a>
+    <button type="button" class="link" id="proof-open">how do i know?</button>
+  </header>
+
+  <main id="main">
+    <section id="landing" class="view" aria-labelledby="landing-title">
+      <h1 id="landing-title" tabindex="-1">your year, from your own data.</h1>
+      <p class="lead">drop in the files you can download from spotify, netflix, youtube, chatgpt, discord, strava, letterboxd, your browser and more. attic turns them into a story you can keep. it happens in this page. nothing is uploaded.</p>
+      <div class="drop" id="drop">
+        <input type="file" id="file-input" multiple class="visually-hidden">
+        <label for="file-input" class="drop-label">
+          <span class="drop-big">drop your files or zips here</span>
+          <span class="drop-small">or <span class="as-button">choose files</span></span>
+        </label>
+      </div>
+      <p class="actions">
+        <button type="button" id="example">try it with example data</button>
+        <a href="guides/">how do i get my files?</a>
+      </p>
+      <p class="offline">works offline. try it with wi-fi off.</p>
+      <div id="kept" class="note" hidden>
+        <p>you kept a year on this device.</p>
+        <p class="actions"><button type="button" id="kept-open">open it</button> <button type="button" id="kept-forget" class="link">forget it</button></p>
+      </div>
+      <noscript><p class="note">attic needs javascript to read your files. even then, it never sends them anywhere.</p></noscript>
+    </section>
+
+    <section id="reading" class="view" aria-labelledby="reading-title" hidden>
+      <h1 id="reading-title" tabindex="-1">reading your files</h1>
+      <p class="soft-text">it all happens here, in this page.</p>
+      <ul id="progress" class="rows" aria-live="polite"></ul>
+    </section>
+
+    <section id="found" class="view" aria-labelledby="found-title" hidden>
+      <h1 id="found-title" tabindex="-1">what we found</h1>
+      <ul id="found-rows" class="rows"></ul>
+      <div id="found-unknown"></div>
+      <details id="found-notes" hidden>
+        <summary>what was left out, and why</summary>
+        <ul id="found-notes-list"></ul>
+      </details>
+      <div class="pickers">
+        <label>year <select id="year"></select></label>
+        <label>time zone <select id="zone"></select></label>
+      </div>
+      <p id="year-note" class="soft-text" hidden></p>
+      <p class="actions">
+        <button type="button" id="make" class="primary">make my year</button>
+        <button type="button" id="restart" class="link">start again</button>
+      </p>
+    </section>
+
+    <section id="deck" class="view deck-view" aria-labelledby="deck-title" hidden>
+      <h1 id="deck-title" class="visually-hidden" tabindex="-1">your year</h1>
+      <div class="deck-bar">
+        <button type="button" id="deck-back" class="link">back</button>
+        <p id="deck-count" class="deck-count"></p>
+        <button type="button" id="deck-keep" class="link">keep it</button>
+      </div>
+      <div class="stage" id="stage"></div>
+      <div class="card-actions">
+        <button type="button" id="card-save">save image</button>
+        <button type="button" id="card-names" aria-pressed="true">names hidden</button>
+        <button type="button" id="card-leave" aria-pressed="false">leave out</button>
+      </div>
+      <nav class="deck-nav" aria-label="cards">
+        <button type="button" id="prev" aria-label="previous card">back</button>
+        <ol id="dots" class="dots"></ol>
+        <progress id="deck-progress" class="deck-progress" max="1" value="0" aria-label="where you are in the deck" hidden></progress>
+        <button type="button" id="next" aria-label="next card">next</button>
+      </nav>
+      <p id="deck-live" class="visually-hidden" aria-live="polite"></p>
+    </section>
+
+    <section id="keep" class="view" aria-labelledby="keep-title" hidden>
+      <h1 id="keep-title" tabindex="-1">keep it</h1>
+      <fieldset class="sizes">
+        <legend>image size</legend>
+        <label><input type="radio" name="size" value="card" checked> 4:5, for posts</label>
+        <label><input type="radio" name="size" value="story"> 9:16, for stories</label>
+      </fieldset>
+      <p class="actions">
+        <button type="button" id="save-all" class="primary">save all cards</button>
+        <button type="button" id="copy-text">copy as text</button>
+      </p>
+      <p id="keep-status" class="soft-text" aria-live="polite"></p>
+      <textarea id="copy-fallback" class="copy-fallback" rows="8" aria-label="your year as text" readonly hidden></textarea>
+      <p><label class="check"><input type="checkbox" id="keep-device"> keep my results on this device. only the finished cards are stored, never your files.</label></p>
+      <p class="actions">
+        <button type="button" id="keep-back">back to the cards</button>
+        <button type="button" id="forget" class="danger">forget everything</button>
+      </p>
+    </section>
+
+    <p id="error" class="note error" role="alert" hidden></p>
+    <p id="status" class="note" role="status" hidden></p>
+  </main>
+
+  <footer class="foot app-foot">
+    <p>attic is not affiliated with spotify, apple, netflix, youtube, openai, anthropic, discord, letterboxd, goodreads, strava, valve, amazon or any browser maker. it is made by tuftle.</p>
+  </footer>
+
+  <dialog id="proof" aria-labelledby="proof-title">
+    <h2 id="proof-title">how do i know?</h2>
+    <p>this page is not allowed to send anything anywhere. its security policy says <code>connect-src 'none'</code>, which tells your browser to block every request the page might try to make, even by mistake.</p>
+    <p class="proof-count"><span id="proof-count">0</span> requests since you dropped your files.</p>
+    <p>to check it yourself:</p>
+    <ol>
+      <li>turn off wi-fi, then drop your files. it all still works.</li>
+      <li>open your browser's developer tools, go to the network tab, and watch it stay empty while attic reads.</li>
+      <li>save this page and open it from your disk, with no connection at all.</li>
+    </ol>
+    <p class="soft-text">to be honest about it: the page itself was downloaded once, like any page. after that, nothing leaves.</p>
+    <p><button type="button" id="proof-close">close</button></p>
+  </dialog>
+</body>
+</html>

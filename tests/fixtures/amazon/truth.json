@@ -1,0 +1,146 @@
+{
+ "zone": "America/Chicago",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "amazon.orders": {
+    "orders": 63,
+    "items": 97,
+    "months": [
+     4,
+     2,
+     5,
+     6,
+     7,
+     7,
+     2,
+     4,
+     6,
+     5,
+     9,
+     6
+    ]
+   },
+   "amazon.spent": {
+    "totals": [
+     {
+      "currency": "USD",
+      "amount": 10634.969999999996
+     },
+     {
+      "currency": "EUR",
+      "amount": 623.24
+     }
+    ]
+   },
+   "amazon.biggest": {
+    "order": "111-0000136-0000959",
+    "amount": 470.75,
+    "currency": "USD"
+   },
+   "amazon.month": {
+    "month": 10,
+    "orders": 9
+   },
+   "amazon.weekday": {
+    "bins": [
+     9,
+     8,
+     12,
+     8,
+     10,
+     6,
+     10
+    ],
+    "peak": 2
+   },
+   "amazon.night": {
+    "night": 3,
+    "orders": 63,
+    "share": 0.047619047619047616
+   },
+   "amazon.repeat": {
+    "products": 17,
+    "top": {
+     "name": "Crimson Foxes (Live), pack of 2",
+     "orders": 7
+    }
+   },
+   "amazon.change": {
+    "orders": 63,
+    "prev": 75,
+    "change": -0.16
+   }
+  },
+  "2026": {
+   "amazon.orders": {
+    "orders": 64,
+    "items": 92,
+    "months": [
+     5,
+     8,
+     9,
+     8,
+     9,
+     4,
+     8,
+     6,
+     5,
+     2,
+     0,
+     0
+    ]
+   },
+   "amazon.spent": {
+    "totals": [
+     {
+      "currency": "USD",
+      "amount": 8200.630000000001
+     },
+     {
+      "currency": "EUR",
+      "amount": 542.3800000000001
+     }
+    ]
+   },
+   "amazon.biggest": {
+    "order": "111-0000171-0001204",
+    "amount": 473.09000000000003,
+    "currency": "USD"
+   },
+   "amazon.month": {
+    "month": 2,
+    "orders": 9
+   },
+   "amazon.weekday": {
+    "bins": [
+     7,
+     9,
+     11,
+     7,
+     11,
+     10,
+     9
+    ],
+    "peak": 2
+   },
+   "amazon.night": {
+    "night": 3,
+    "orders": 64,
+    "share": 0.046875
+   },
+   "amazon.repeat": {
+    "products": 15,
+    "top": {
+     "name": "Crimson Foxes (Live), pack of 2",
+     "orders": 7
+    }
+   },
+   "amazon.change": {
+    "orders": 64,
+    "prev": 47,
+    "change": 0.3617021276595745
+   }
+  }
+ }
+}

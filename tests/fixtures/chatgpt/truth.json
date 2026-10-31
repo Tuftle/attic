@@ -1,0 +1,237 @@
+{
+ "zone": "Europe/Berlin",
+ "now": "2026-10-29T12:00:00.000Z",
+ "years": {
+  "2025": {
+   "chatgpt.conversations": {
+    "conversations": 120,
+    "messages": 1238,
+    "user": 599,
+    "assistant": 639
+   },
+   "chatgpt.words": {
+    "wrote": 10447,
+    "got": 28128,
+    "ratio": 2.6924475926103186
+   },
+   "chatgpt.busiest": {
+    "day": "2025-12-20",
+    "messages": 20,
+    "bins": [
+     11,
+     2,
+     6,
+     0,
+     0,
+     0,
+     5,
+     21,
+     19,
+     41,
+     46,
+     31,
+     21,
+     45,
+     54,
+     59,
+     36,
+     19,
+     38,
+     26,
+     50,
+     22,
+     38,
+     9
+    ],
+    "peak": 15
+   },
+   "chatgpt.longest": {
+    "title": "Broken Echoes (Live) cooking",
+    "messages": 20
+   },
+   "chatgpt.code": {
+    "withCode": 14,
+    "conversations": 120,
+    "share": 0.11666666666666667
+   },
+   "chatgpt.top-words": {
+    "top": [
+     {
+      "word": "tomatoes",
+      "n": 167
+     },
+     {
+      "word": "seedlings",
+      "n": 167
+     },
+     {
+      "word": "watering",
+      "n": 160
+     },
+     {
+      "word": "dinner",
+      "n": 159
+     },
+     {
+      "word": "garden",
+      "n": 158
+     },
+     {
+      "word": "oven",
+      "n": 151
+     },
+     {
+      "word": "soil",
+      "n": 151
+     },
+     {
+      "word": "python",
+      "n": 149
+     }
+    ]
+   },
+   "chatgpt.please": {
+    "please": 125,
+    "thanks": 66
+   },
+   "chatgpt.first": {
+    "title": "Golden Foxes code",
+    "t": 1735834552135
+   },
+   "chatgpt.models": {
+    "top": [
+     {
+      "name": "gpt-4o",
+      "messages": 402
+     },
+     {
+      "name": "gpt-4o-mini",
+      "messages": 182
+     },
+     {
+      "name": "o3",
+      "messages": 55
+     }
+    ]
+   }
+  },
+  "2026": {
+   "chatgpt.conversations": {
+    "conversations": 107,
+    "messages": 1035,
+    "user": 507,
+    "assistant": 528
+   },
+   "chatgpt.words": {
+    "wrote": 8788,
+    "got": 23376,
+    "ratio": 2.659990896677287
+   },
+   "chatgpt.busiest": {
+    "day": "2026-05-29",
+    "messages": 19,
+    "bins": [
+     6,
+     6,
+     0,
+     6,
+     1,
+     0,
+     8,
+     24,
+     18,
+     82,
+     50,
+     14,
+     41,
+     47,
+     12,
+     40,
+     23,
+     19,
+     28,
+     15,
+     20,
+     27,
+     17,
+     3
+    ],
+    "peak": 9
+   },
+   "chatgpt.longest": {
+    "title": "Wild Pilots code",
+    "messages": 19
+   },
+   "chatgpt.code": {
+    "withCode": 10,
+    "conversations": 107,
+    "share": 0.09345794392523364
+   },
+   "chatgpt.top-words": {
+    "top": [
+     {
+      "word": "recipe",
+      "n": 201
+     },
+     {
+      "word": "dinner",
+      "n": 194
+     },
+     {
+      "word": "garlic",
+      "n": 187
+     },
+     {
+      "word": "oven",
+      "n": 186
+     },
+     {
+      "word": "bread",
+      "n": 179
+     },
+     {
+      "word": "lentils",
+      "n": 156
+     },
+     {
+      "word": "soil",
+      "n": 140
+     },
+     {
+      "word": "tomatoes",
+      "n": 138
+     }
+    ]
+   },
+   "chatgpt.please": {
+    "please": 85,
+    "thanks": 56
+   },
+   "chatgpt.first": {
+    "title": "New chat",
+    "t": 1767258087243
+   },
+   "chatgpt.models": {
+    "top": [
+     {
+      "name": "gpt-4o",
+      "messages": 254
+     },
+     {
+      "name": "o3",
+      "messages": 149
+     },
+     {
+      "name": "gpt-4o-mini",
+      "messages": 125
+     }
+    ]
+   },
+   "chatgpt.change": {
+    "conversations": 107,
+    "prev": 102,
+    "change": 0.049019607843137254
+   }
+  }
+ }
+}

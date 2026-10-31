@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; worker-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="darkreader-lock">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="how to download your own data from spotify, netflix, youtube, chatgpt, claude and your browser, so attic can turn it into your year.">
+  <title>attic: how do i get my files?</title>
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">skip to the guides</a>
+  <div class="page">
+  <header>
+    <a class="home" href="../"><img src="../assets/logo.svg" alt="" width="28" height="28">attic</a>
+  </header>
+  <main id="main">
+    <h1>how do i get my files?</h1>
+    <p class="lead">every service on this page lets you download your own data. you ask for it, they email you a link, and you drop the file into attic. it stays on your computer.</p>
+    <p class="note"><strong>request your data now.</strong> some exports take days or even weeks to arrive, so ask today and it will be ready when you want it.</p>
+    <nav aria-label="services">
+    <ul class="toc">
+      <li><a href="#spotify">spotify</a></li>
+      <li><a href="#netflix">netflix</a></li>
+      <li><a href="#youtube">youtube</a></li>
+      <li><a href="#chatgpt">chatgpt</a></li>
+      <li><a href="#claude">claude</a></li>
+      <li><a href="#firefox">firefox</a></li>
+      <li><a href="#wren">wren</a></li>
+      <li><a href="#chrome">chrome</a></li>
+      <li><a href="#edge">edge</a></li>
+      <li><a href="#brave">brave</a></li>
+      <li><a href="#discord">discord</a></li>
+      <li><a href="#letterboxd">letterboxd</a></li>
+      <li><a href="#goodreads">goodreads</a></li>
+      <li><a href="#strava">strava</a></li>
+      <li><a href="#apple">apple music</a></li>
+      <li><a href="#steam">steam</a></li>
+      <li><a href="#amazon">amazon</a></li>
+    </ul>
+    </nav>
+    <section class="guide" id="spotify" aria-labelledby="spotify-title">
+      <h2 id="spotify-title">spotify</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://www.spotify.com/account/privacy/" rel="noreferrer">spotify.com/account/privacy</a></dd>
+        <dt>how long</dt><dd>spotify says up to 30 days. the smaller account data often comes in about 5 days. the extended history can take longer.</dd>
+        <dt>the file</dt><dd>a zip such as <code>my_spotify_data.zip</code>. inside is a folder of files named like <code>Streaming_History_Audio_2024-2026_0.json</code>. drop the whole zip.</dd>
+      </dl>
+      <ol>
+        <li>sign in to your spotify account on the web and open privacy settings.</li>
+        <li>under download your data, tick extended streaming history. you can tick account data too.</li>
+        <li>press request data, then confirm the request from the email spotify sends you.</li>
+        <li>when the next email arrives, download the zip. the link stops working after a while, so save the file.</li>
+      </ol>
+      <ul class="tips">
+        <li>account data on its own holds about a year of plays, with less detail. attic reads it, but the extended history tells a fuller story.</li>
+        <li>podcasts are kept apart from music.</li>
+      </ul>
+    </section>
+    <section class="guide" id="netflix" aria-labelledby="netflix-title">
+      <h2 id="netflix-title">netflix</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://www.netflix.com/account/getmyinfo" rel="noreferrer">netflix.com/account/getmyinfo</a></dd>
+        <dt>how long</dt><dd>up to 30 days, often sooner.</dd>
+        <dt>the file</dt><dd>a zip such as <code>netflix-report.zip</code>. inside is <code>CONTENT_INTERACTION/ViewingActivity.csv</code>. drop the zip or just that file.</dd>
+      </dl>
+      <ol>
+        <li>sign in on the web as the account owner and open the page to download your personal information.</li>
+        <li>press submit request, then confirm it from the email netflix sends.</li>
+        <li>when the next email arrives, download the zip.</li>
+      </ol>
+      <ul class="tips">
+        <li>the viewing activity page has a quicker download, <code>NetflixViewingHistory.csv</code>. it holds titles and dates but no times or lengths, so attic needs the full request instead.</li>
+        <li>every profile on the account is included. attic shows each one on its own.</li>
+      </ul>
+    </section>
+    <section class="guide" id="youtube" aria-labelledby="youtube-title">
+      <h2 id="youtube-title">youtube</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://takeout.google.com/" rel="noreferrer">takeout.google.com</a></dd>
+        <dt>how long</dt><dd>usually minutes to a few hours. large accounts can take a day or more.</dd>
+        <dt>the file</dt><dd>a takeout zip holding <code>Takeout/YouTube and YouTube Music/history/watch-history.json</code>. drop the zip. attic opens only that file, even in a big archive.</dd>
+      </dl>
+      <ol>
+        <li>open google takeout and press deselect all.</li>
+        <li>scroll down to youtube and youtube music and tick it.</li>
+        <li>press all youtube data included, press deselect all, then tick only history.</li>
+        <li>press multiple formats and set history to json. html works too, but json is more reliable.</li>
+        <li>press next step. choose to get a download link by email, export once, as a zip, then create the export.</li>
+      </ol>
+      <ul class="tips">
+        <li>watch history lists what you watched and when, not for how long, so attic counts videos, never hours.</li>
+        <li>if watch history was paused, those months will be missing.</li>
+      </ul>
+    </section>
+    <section class="guide" id="chatgpt" aria-labelledby="chatgpt-title">
+      <h2 id="chatgpt-title">chatgpt</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://chatgpt.com/" rel="noreferrer">chatgpt.com, settings, data controls</a></dd>
+        <dt>how long</dt><dd>usually minutes, sometimes a few hours.</dd>
+        <dt>the file</dt><dd>a zip holding <code>conversations.json</code>. drop the zip.</dd>
+      </dl>
+      <ol>
+        <li>open chatgpt, then settings, then data controls.</li>
+        <li>press export data, then confirm.</li>
+        <li>open the email and download the zip. the link stops working after about a day.</li>
+      </ol>
+      <ul class="tips">
+        <li>attic counts conversations, messages and words. conversation titles and your most used words are hidden in saved images unless you turn names on.</li>
+      </ul>
+    </section>
+    <section class="guide" id="claude" aria-labelledby="claude-title">
+      <h2 id="claude-title">claude</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://claude.ai/" rel="noreferrer">claude.ai, settings, privacy</a></dd>
+        <dt>how long</dt><dd>usually minutes to a few hours.</dd>
+        <dt>the file</dt><dd>a zip holding <code>conversations.json</code>. drop the zip.</dd>
+      </dl>
+      <ol>
+        <li>open claude, then settings, then privacy.</li>
+        <li>press export data.</li>
+        <li>open the email and download the zip. the link stops working after a while.</li>
+      </ol>
+      <ul class="tips">
+        <li>conversation titles are hidden in saved images unless you turn names on.</li>
+      </ul>
+    </section>
+    <section class="guide" id="firefox" aria-labelledby="firefox-title">
+      <h2 id="firefox-title">firefox</h2>
+      <dl>
+        <dt>where</dt><dd><code>about:support</code> in the address bar</dd>
+        <dt>how long</dt><dd>right away.</dd>
+        <dt>the file</dt><dd><code>places.sqlite</code>. drop the copy, not the original.</dd>
+      </dl>
+      <ol>
+        <li>type <code>about:support</code> in the address bar and press enter.</li>
+        <li>next to profile folder, press open folder.</li>
+        <li>quit firefox completely. while it runs, the newest visits may sit in a side file.</li>
+        <li>copy <code>places.sqlite</code> from that folder to your desktop or downloads folder.</li>
+      </ol>
+      <ul class="tips">
+        <li>attic reads only site names and visit times. it never reads page titles, full addresses or searches.</li>
+      </ul>
+    </section>
+    <section class="guide" id="wren" aria-labelledby="wren-title">
+      <h2 id="wren-title">wren</h2>
+      <dl>
+        <dt>where</dt><dd><code>about:support</code> in the address bar</dd>
+        <dt>how long</dt><dd>right away.</dd>
+        <dt>the file</dt><dd><code>places.sqlite</code>. drop the copy, not the original.</dd>
+      </dl>
+      <ol>
+        <li>type <code>about:support</code> in the address bar and press enter.</li>
+        <li>next to profile folder, press open folder.</li>
+        <li>quit wren completely.</li>
+        <li>copy <code>places.sqlite</code> from that folder to your desktop or downloads folder.</li>
+      </ol>
+      <ul class="tips">
+        <li>wren already has a year in review of its own. this one is the version you can share.</li>
+      </ul>
+    </section>
+    <section class="guide" id="chrome" aria-labelledby="chrome-title">
+      <h2 id="chrome-title">chrome</h2>
+      <dl>
+        <dt>where</dt><dd><code>chrome://version</code> in the address bar</dd>
+        <dt>how long</dt><dd>right away.</dd>
+        <dt>the file</dt><dd><code>History</code>. drop the copy, not the original.</dd>
+      </dl>
+      <ol>
+        <li>type <code>chrome://version</code> in the address bar and press enter.</li>
+        <li>find the profile path and open that folder in your file manager.</li>
+        <li>quit chrome completely, so the file is not locked.</li>
+        <li>copy the file named <code>History</code>, which has no extension, to your desktop or downloads folder.</li>
+      </ol>
+      <ul class="tips">
+        <li>on a mac the folder sits inside your library, which finder hides. in finder, use go to folder and paste the profile path.</li>
+        <li>attic reads only site names and visit times. it never reads page titles, full addresses or searches.</li>
+      </ul>
+    </section>
+    <section class="guide" id="edge" aria-labelledby="edge-title">
+      <h2 id="edge-title">edge</h2>
+      <dl>
+        <dt>where</dt><dd><code>edge://version</code> in the address bar</dd>
+        <dt>how long</dt><dd>right away.</dd>
+        <dt>the file</dt><dd><code>History</code>. drop the copy, not the original.</dd>
+      </dl>
+      <ol>
+        <li>type <code>edge://version</code> in the address bar and press enter.</li>
+        <li>find the profile path and open that folder in your file manager.</li>
+        <li>quit edge completely, so the file is not locked.</li>
+        <li>copy the file named <code>History</code>, which has no extension, to your desktop or downloads folder.</li>
+      </ol>
+    </section>
+    <section class="guide" id="brave" aria-labelledby="brave-title">
+      <h2 id="brave-title">brave</h2>
+      <dl>
+        <dt>where</dt><dd><code>brave://version</code> in the address bar</dd>
+        <dt>how long</dt><dd>right away.</dd>
+        <dt>the file</dt><dd><code>History</code>. drop the copy, not the original.</dd>
+      </dl>
+      <ol>
+        <li>type <code>brave://version</code> in the address bar and press enter.</li>
+        <li>find the profile path and open that folder in your file manager.</li>
+        <li>quit brave completely, so the file is not locked.</li>
+        <li>copy the file named <code>History</code>, which has no extension, to your desktop or downloads folder.</li>
+      </ol>
+    </section>
+    <section class="guide" id="discord" aria-labelledby="discord-title">
+      <h2 id="discord-title">discord</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://discord.com/app" rel="noreferrer">discord settings, data and privacy</a></dd>
+        <dt>how long</dt><dd>discord says up to 30 days. it is often a few days.</dd>
+        <dt>the file</dt><dd>a zip such as <code>package.zip</code>, with a <code>messages</code> folder. drop the whole zip.</dd>
+      </dl>
+      <ol>
+        <li>open discord, then user settings, then data and privacy.</li>
+        <li>press request all of my data, choose what to include, and confirm.</li>
+        <li>when the email arrives, download the zip. the link stops working after a while.</li>
+      </ol>
+      <ul class="tips">
+        <li>only messages you sent are in it. attic never opens the activity folder, and never names who you sent direct messages to.</li>
+        <li>server and channel names are hidden in saved images unless you turn names on.</li>
+      </ul>
+    </section>
+    <section class="guide" id="letterboxd" aria-labelledby="letterboxd-title">
+      <h2 id="letterboxd-title">letterboxd</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://letterboxd.com/settings/data/" rel="noreferrer">letterboxd.com/settings/data</a></dd>
+        <dt>how long</dt><dd>right away.</dd>
+        <dt>the file</dt><dd>a zip with <code>diary.csv</code>. drop the whole zip.</dd>
+      </dl>
+      <ol>
+        <li>sign in on the web and open settings, then data.</li>
+        <li>press export your data.</li>
+        <li>the zip downloads straight away.</li>
+      </ol>
+      <ul class="tips">
+        <li>films are counted on the day you watched them. without a diary, on the day you logged them.</li>
+      </ul>
+    </section>
+    <section class="guide" id="goodreads" aria-labelledby="goodreads-title">
+      <h2 id="goodreads-title">goodreads</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://www.goodreads.com/review/import" rel="noreferrer">goodreads.com/review/import</a></dd>
+        <dt>how long</dt><dd>usually a few minutes.</dd>
+        <dt>the file</dt><dd><code>goodreads_library_export.csv</code>. drop it.</dd>
+      </dl>
+      <ol>
+        <li>sign in on the web and open my books, then import and export.</li>
+        <li>press export library.</li>
+        <li>when the link appears, download the file.</li>
+      </ol>
+      <ul class="tips">
+        <li>books count when they are on your read shelf with a date read. reviews and private notes are never read.</li>
+      </ul>
+    </section>
+    <section class="guide" id="strava" aria-labelledby="strava-title">
+      <h2 id="strava-title">strava</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://www.strava.com/account" rel="noreferrer">strava settings, my account</a></dd>
+        <dt>how long</dt><dd>usually a few hours.</dd>
+        <dt>the file</dt><dd>a zip with <code>activities.csv</code>. drop the whole zip.</dd>
+      </dl>
+      <ol>
+        <li>sign in on the web and open settings, then my account.</li>
+        <li>under download or delete your account, press get started, then request your archive.</li>
+        <li>when the email arrives, download the zip.</li>
+      </ol>
+      <ul class="tips">
+        <li>attic reads the type, time, distance and climb of each activity. never names, notes, routes or photos.</li>
+      </ul>
+    </section>
+    <section class="guide" id="apple" aria-labelledby="apple-title">
+      <h2 id="apple-title">apple music</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://privacy.apple.com/" rel="noreferrer">privacy.apple.com</a></dd>
+        <dt>how long</dt><dd>apple says up to 7 days.</dd>
+        <dt>the file</dt><dd>a zip holding <code>Apple Music Play Activity.csv</code>. drop the whole zip.</dd>
+      </dl>
+      <ol>
+        <li>sign in at privacy.apple.com and choose to get a copy of your data.</li>
+        <li>tick apple media services information, then continue and confirm.</li>
+        <li>when the email arrives, download the files.</li>
+      </ol>
+      <ul class="tips">
+        <li>ip addresses and device details in the file are never read.</li>
+        <li>if only the daily tracks file is there, the deck has days but no hours.</li>
+      </ul>
+    </section>
+    <section class="guide" id="steam" aria-labelledby="steam-title">
+      <h2 id="steam-title">steam</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://store.steampowered.com/account/licenses/" rel="noreferrer">store.steampowered.com/account/licenses</a></dd>
+        <dt>how long</dt><dd>right away.</dd>
+        <dt>the file</dt><dd>the saved page, such as <code>Licenses.html</code>. drop it.</dd>
+      </dl>
+      <ol>
+        <li>sign in on the web and open the licences and product key activations page.</li>
+        <li>save the page from your browser's menu, as a web page or html only.</li>
+      </ol>
+      <ul class="tips">
+        <li>steam keeps no playtime by year, so the deck is about the games you added.</li>
+      </ul>
+    </section>
+    <section class="guide" id="amazon" aria-labelledby="amazon-title">
+      <h2 id="amazon-title">amazon</h2>
+      <dl>
+        <dt>where</dt><dd><a href="https://www.amazon.com/hz/privacy-central/data-requests/preview.html" rel="noreferrer">amazon privacy central, request your data</a></dd>
+        <dt>how long</dt><dd>usually a few days, up to a month.</dd>
+        <dt>the file</dt><dd>a zip with <code>Retail.OrderHistory.1.csv</code> inside. drop the whole zip.</dd>
+      </dl>
+      <ol>
+        <li>sign in and open request your data.</li>
+        <li>choose your orders, then submit and confirm from the email.</li>
+        <li>when the download is ready, download the zip.</li>
+      </ol>
+      <ul class="tips">
+        <li>attic reads dates, amounts and product names. never addresses, payment details or gift messages.</li>
+        <li>money is added up per currency, never converted.</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="foot">
+    <p>attic is not affiliated with any of these services. their names are used only to say which file is which.</p>
+    <p>services change their pages from time to time. if a step here no longer matches, the file you need is usually still there under a new name.</p>
+  </footer>
+  </div>
+</body>
+</html>
